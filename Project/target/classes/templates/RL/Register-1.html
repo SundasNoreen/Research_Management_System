@@ -1,0 +1,45 @@
+<!-- SUNDAS NOREEN -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th=“http://www.thymeleaf.org”>
+<title>Register</title>
+<head th:replace="RL/Register :: header"></head>
+<style th:replace="RL/Register :: css"></style>
+<body>
+<form id="msform" th:action="@{'/register'}" method="post">
+  <ul id="progressbar">
+    <li class="active">Account Setup</li>
+    <li>Personal Details</li>
+    <li>Professional Details</li>
+  </ul>
+  <fieldset>
+    <h2 class="fs-title">Register Your Account</h2>
+    <input type="text" name="email" placeholder="Email" required />
+    <input type="password" name="password" id="pass-one" onkeyup="myFunction()" placeholder="Password" required/>
+    <input type="password" name="cpass" id="pass-two" onkeyup="myFunction()" placeholder="Confirm Password" required/>
+    <select name="role" id="cat" required>
+      <option value="" disabled selected>Your Role</option>
+      <option value="Student">Student</option>
+      <option value="Teacher">Teacher</option>
+    </select>
+    <p style="text-align: center;font-size: 12px;" id="message"></p>
+    <p style="text-align: center;font-size: 12px; color: red" id="error" th:text="${error}">Message.</p>
+    <input type="submit" id="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+</form>
+<script>
+  function myFunction() {
+    if (document.getElementById('pass-one').value ==
+            document.getElementById('pass-two').value)
+    {
+      document.getElementById('message').style.color = 'green';
+      document.getElementById('message').innerHTML = 'Passwords Matching!';
+      document.getElementById('submit').disabled = false;
+    } else {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'Passwords not Matching!';
+      document.getElementById('submit').disabled = true;
+    }
+  }
+</script>
+</body>
+</html>
