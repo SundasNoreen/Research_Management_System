@@ -16,11 +16,15 @@ public class Home_Controller
     String Global_Email;
     String Global_Role;
     String Page;
+    int flag = 1;
     DatabaseConnection Data = new DatabaseConnection();
 
     @RequestMapping("/")
     public String Home_Page ()
     {
+        flag=0;
+        Global_Role="";
+        Global_Email="";
         Page="Home/Home.html";
         return Page;
     }
@@ -132,7 +136,10 @@ public class Home_Controller
         boolean result = MyObj.Login(Email,Password);
         if (result)
         {
-            return Data.Connection("RL/AdminLogin.html",Page);
+            flag=1;
+            Global_Email=Email;
+            Global_Role=MyObj.getRole();
+            return Data.Connection("Admin/Welcome.html",Page);
         }
         else
         {
@@ -142,5 +149,14 @@ public class Home_Controller
         return Data.Connection(Page,Page);
     }
 
-
+    @RequestMapping ("/Admin_Profile")
+    public String Profile ()
+    {
+        if (flag==1)
+        {
+            Page = "Admin/profile.html";
+            return Data.Connection(Page, Page);
+        }
+        return null;
+    }
 }

@@ -1,4 +1,4 @@
-// AQSA AYAZ
+// AQSA AYAZ(2019-CE-7)
 
 package com.sundas.blogs;
 import org.unbescape.css.CssIdentifierEscapeType;
@@ -9,104 +9,107 @@ import java.util.Date;
 
 public class Student extends Person
 {
-    private String name;
-    private String father;
-    private String cnic;
-    private String DOB;
-    private String contact;
-    private String city;
-    private String heighestedu;
-    private String ongoingedu;
-    private String field;
-    private String institute;
-    private String ci;
+    private String Reg_No;
+    private String Degree;
+    private String ClassName;
+    private String Field;
+    private String FatherName;
+    private String CNIC;
+    private Date DOB;
+    private String ContactNumber;
+    private String Email;
+    private String LoginId;
+    private String Password;
 
-    public String getName(){
-        return name;
+    public void setField(String field) {
+        Field = field;
     }
 
-    public String getCnic() {
-        return cnic;
+    public void setDegree(String degree) {
+        Degree = degree;
     }
 
-    public String getFather() {
-        return father;
-    }
-
-    public String getDOB() {
-        return DOB;
-    }
-
-    public String getHeighestedu() {
-        return heighestedu;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public String getOngoingedu() {
-        return ongoingedu;
+    public String getClassName() {
+        return ClassName;
     }
 
     public String getField() {
-        return field;
+        return Field;
     }
 
-    public String getInstitute() {
-        return institute;
+    public String getDegree() {
+        return Degree;
     }
 
-    public String getCi() {
-        return ci;
+    public String getCNIC() {
+        return CNIC;
     }
 
-    public void setCnic(String cnic) {
-        this.cnic = cnic;
+    public String getContactNumber() {
+        return ContactNumber;
     }
 
-    public void setCi(String ci) {
-        this.ci = ci;
+    public Date getDOB() {
+        return DOB;
     }
 
-    public void setHeighestedu(String heighestedu) {
-        this.heighestedu = heighestedu;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setDOB(String DOB) {
+    public String getFatherName() {
+        return FatherName;
+    }
+
+    public String getLoginId() {
+        return LoginId;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public String getReg_No() {
+        return Reg_No;
+    }
+
+    public void setClass(String ClassName) {
+        ClassName = ClassName;
+    }
+
+    public void setCNIC(String CNIC) {
+        this.CNIC = CNIC;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        ContactNumber = contactNumber;
+    }
+
+    public void setDOB(Date DOB) {
         this.DOB = DOB;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setEmail(String email) {
+        Email = email;
     }
 
-    public void setField(String field) {
-        this.field = field;
+    public void setFatherName(String fatherName) {
+        FatherName = fatherName;
     }
 
-    public void setOngoingedu(String ongoingedu) {
-        this.ongoingedu = ongoingedu;
+    public void setLoginId(String loginId) {
+        LoginId = loginId;
     }
 
-    public void setInstitute(String institute) {
-        this.institute = institute;
+    public void setPassword(String password) {
+        Password = password;
     }
 
-    public void setFather(String father) {
-        this.father = father;
+    public void setReg_No(String reg_No) {
+        Reg_No = reg_No;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
+
 
     public boolean Login(String Email, String Password) throws SQLException
     {
@@ -119,8 +122,8 @@ public class Student extends Person
                 ResultSet rs = stmt.executeQuery("SELECT * FROM students ");
                 while (rs.next())
                 {
-                    String email = rs.getString(5);
-                    String PWS = rs.getString(4);
+                    String email = rs.getString(9);
+                    String PWS = rs.getString(11);
                     if (email.equals(Email) && PWS.equals(Password))
                     {
                         return true;

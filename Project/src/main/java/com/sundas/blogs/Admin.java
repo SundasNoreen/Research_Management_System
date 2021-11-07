@@ -15,8 +15,8 @@ public class Admin extends Person
             ResultSet rs = stmt.executeQuery("SELECT * FROM admin ");
             while (rs.next())
             {
-                String email = rs.getString(3);
-                String PWS = rs.getString(4);
+                String email = rs.getString(4);
+                String PWS = rs.getString(5);
                 if (email.equals(Email) && PWS.equals(Password))
                 {
                     return true;
