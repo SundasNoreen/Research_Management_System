@@ -83,24 +83,22 @@ public class Application {
         try{
             con = DriverManager.getConnection("jdbc:mysql://localhost/rms", "root", "");
             Class.forName("com.mysql.cj.jdbc.Driver");
-        String query = "INSERT INTO  application(Opportunity_Id,Student_Id,CGPA,Degree,Field,Reason,Status) VALUES (?,?,?,?,?,?,?)";
-        PreparedStatement st = con.prepareStatement(query);
-        st.setInt(1,Opportunity_Id);
-        st.setInt(2,Student_Id);
-        st.setString(3,CGPA);
-        st.setString(4, Degree);
-        st.setString(5,Field);
-        st.setString(6,Reason);
-        st.setString(7,Status);
-        st.executeUpdate();}
-        catch (Exception e)
-
-        {
+            String query = "INSERT INTO  application(Opportunity_Id,Student_Id,CGPA,Degree,Field,Reason,Status) VALUES (?,?,?,?,?,?,?)";
+            PreparedStatement st = con.prepareStatement(query);
+            st.setInt(1,Opportunity_Id);
+            st.setInt(2,Student_Id);
+            st.setString(3,CGPA);
+            st.setString(4, Degree);
+            st.setString(5,Field);
+            st.setString(6,Reason);
+            st.setString(7,Status);
+            st.executeUpdate();
+        }
+        catch (Exception e){
             System.out.println(e.getMessage());
         }
-        finally
-        {
+        finally{
             con.close();
-        }}
-
+        }
+    }
 }
