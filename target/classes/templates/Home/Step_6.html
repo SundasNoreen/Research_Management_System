@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th=“http://www.thymeleaf.org”>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RMS</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/University_of_Engineering_and_Technology_Lahore_logo.svg/1200px-University_of_Engineering_and_Technology_Lahore_logo.svg.png"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/css/HomePage.css">
+</head>
+<body>
+<nav class="navbar navbar-light navbar-expand-md navigation-clean">
+    <div class="container"><a style="text-transform: uppercase; color: teal" class="navbar-brand" href="#">Research Management System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" th:href="@{/}"><strong>Home</strong></a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/Research_Management_System_Overview}"><strong>Overview</strong></a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/Research_Management_System_Help}"><strong>RMS Help</strong></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://ce.uet.edu.pk"><strong>Department</strong></a></li>
+                <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><strong>SignIn</strong></a>
+                    <div class="dropdown-menu"><a class="dropdown-item" th:href="@{/Administrator_Login}">Administrator</a><a class="dropdown-item" th:href="@{/Teacher_Login}">Teacher</a><a class="dropdown-item" th:href="@{/Student_Login}">Student</a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="img"></div>
+
+<section class="article-list">
+    <div class="container">
+        <div class="intro">
+            <h3 class="text-center" >Project Close!</h3>
+            <p style="text-align: justify;">This section provides information and useful links on how to successfully close down your project once your research is complete.</p>
+            <br><br>
+            <p style="font-size:19px; font-weight:bold;">Maximizing the Impact of your Project:</p>
+            <p style="text-align:justify">Find ideas and advice on how to promote, share and add value to your project findings.</p>
+            <br><p style="font-size:19px; font-weight:bold;">Open Access:</p>
+            <p style="text-align:justify">Make your outputs open access.</p>
+            <br>
+            <p style="color:teal; font-size:14px;"><i>Source: Research and Innovation Portal, University College London.</i></p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-basic">
+    <ul class="list-inline">
+        <li class="list-inline-item"><a th:href="@{/Research_Management_System_Overview}">Overview</a></li>
+        <li class="list-inline-item"><a href="https://drive.google.com/file/d/1K5l0_t171xv81UPlJmHTeleDDvh5m78s/view?usp=sharing" target="blank">Student Guide</a></li>
+        <li class="list-inline-item"><a th:href="@{/Research_Management_System_Privacy_Policy}">Privacy Policy</a></li>
+        <li class="list-inline-item"><a th:href="@{/Research_Management_System_Acknowledgements}">Acknowledgements</a></li>
+    </ul>
+    <p class="copyright">Copyright 2021 © University of Engineering and Technology, Lahore.</p>
+</footer>
+</section>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
