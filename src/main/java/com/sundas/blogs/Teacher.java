@@ -189,7 +189,7 @@ public class Teacher extends Person
 
     public boolean Change_Password(String Teacher_Id, String Password, String New) throws SQLException
     {
-    	this.Reg_No=Reg_No;
+    	this.Teacher_Id=Teacher_Id;
         this.New=New;
         this.Password=Password;
         Connection con=null;
@@ -237,7 +237,6 @@ public class Teacher extends Person
         this. Application_ID= Application_ID;
     }    //SQL QUERIES
        
-    
     
         //Method (APPROVE / REJECT)
     public void Approve_Reject(int Opportunity_Id){
