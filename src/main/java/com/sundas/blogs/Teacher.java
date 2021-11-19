@@ -4,7 +4,7 @@ package com.sundas.blogs;
 import java.sql.*;
 import java.util.Date;
 
-public class Teacher extends Person
+public class Teacher
 {
     private String Teacher_Id;
     private String Department;
@@ -163,110 +163,110 @@ public class Teacher extends Person
         }
 
     //METHOD  (View_All_Applications)
-    public void view_All_Applications(int Opportunity_Id){
-        this. Opportunity_Id= Opportunity_Id;
-    }
-    //SQL QUERIES
-    Connection con=null;
-        try
-    {
-        	String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("Select FROM Applications WHERE Opportunity_Id ");
-    }
-        catch (Exception ex)
-    {
-        return false;
-    }
-        finally
-    {
-        con.close();
-    }
-        return false;
-}
-
-    public boolean Change_Password(String Teacher_Id, String Password, String New) throws SQLException
-    {
-    	this.Teacher_Id=Teacher_Id;
-        this.New=New;
-        this.Password=Password;
-        Connection con=null;
-            try{
-            	String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-                con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM teachers ");
-                while (rs.next())
-                {
-                    String PWS = rs.getString(12);
-                    if (PWS.equals(Password))
-                    {
-                        PreparedStatement stmt2=con.prepareStatement("UPDATE `teachers` SET `Password`=? WHERE `Teacher_Id`=?");
-                        stmt2.setString(1,New);
-                        stmt2.setString(2,Teacher_Id);
-                        stmt2.executeUpdate();
-                        return true;
-                    }
-                    else{
-                        return false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-            finally
-            {
-                con.close();
-            }
-            return false;
-        }
-            	
-    //METHOD  (View_All_Research_Opportunites)
-    public void view_All_Research_Opportunites(String Teacher_Id){
-        this. Teacher_Id= Teacher_Id;
-    }  
-    //SQL QUERIES
-
-        //METHOD  (view_Individual_Application)
-    public void view_Individual_Application(int Application_ID){
-        this. Application_ID= Application_ID;
-    }    //SQL QUERIES
-       
-    
-        //Method (APPROVE / REJECT)
-    public void Approve_Reject(int Opportunity_Id){
-        this. Opportunity_Id= Opportunity_Id;
-    }   //SQL QUERIES
-
-        //Method (Current Researches)
-    public void current_researches(int Teacher_Id){
-        this. Teacher_Id= Teacher_Id;
-        }
-        //SQL QUERIES
-
-         //Method (Individual Research)
-    public void Individual_Research(int Research_Id){
-        this. Research_Id= Research_Id;
-        }
-
-          //Method (Update Researches)
-    public void Update_Research(int Research_Id){
-        this. Research_Id= Research_Id;
-        }
-        //SQL QUERIES
-        Connection con=null;
-
-           //Method (Application Close)
-    public void Application_Close(int Application_Id){
-        this. Application_Id= Application_Id;
-        }
-        //SQL QUERIES
-        Connection con=null;
-
+//    public void view_All_Applications(int Opportunity_Id){
+//        this.Opportunity_Id = Opportunity_Id;
+//    }
+//    //SQL QUERIES
+//    Connection con=null;
+//        try
+//    {
+//        	String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+//            con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Statement stmt = con.createStatement();
+//            ResultSet rs = stmt.executeQuery("Select FROM Applications WHERE Opportunity_Id ");
+//    }
+//        catch (Exception ex)
+//    {
+//        return false;
+//    }
+//        finally
+//    {
+//        con.close();
+//    }
+//        return false;
+//}
+//
+//    public boolean Change_Password(String Teacher_Id, String Password, String New) throws SQLException
+//    {
+//    	this.Teacher_Id=Teacher_Id;
+//        this.New=New;
+//        this.Password=Password;
+//        Connection con=null;
+//            try{
+//            	String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+//                con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
+//                Class.forName("com.mysql.cj.jdbc.Driver");
+//                Statement stmt = con.createStatement();
+//                ResultSet rs = stmt.executeQuery("SELECT * FROM teachers ");
+//                while (rs.next())
+//                {
+//                    String PWS = rs.getString(12);
+//                    if (PWS.equals(Password))
+//                    {
+//                        PreparedStatement stmt2=con.prepareStatement("UPDATE `teachers` SET `Password`=? WHERE `Teacher_Id`=?");
+//                        stmt2.setString(1,New);
+//                        stmt2.setString(2,Teacher_Id);
+//                        stmt2.executeUpdate();
+//                        return true;
+//                    }
+//                    else{
+//                        return false;
+//                    }
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                return false;
+//            }
+//            finally
+//            {
+//                con.close();
+//            }
+//            return false;
+//        }
+//
+//    //METHOD  (View_All_Research_Opportunites)
+//    public void view_All_Research_Opportunites(String Teacher_Id){
+//        this. Teacher_Id= Teacher_Id;
+//    }
+//    //SQL QUERIES
+//
+//        //METHOD  (view_Individual_Application)
+//    public void view_Individual_Application(int Application_ID){
+//        this. Application_ID= Application_ID;
+//    }    //SQL QUERIES
+//
+//
+//        //Method (APPROVE / REJECT)
+//    public void Approve_Reject(int Opportunity_Id){
+//        this. Opportunity_Id= Opportunity_Id;
+//    }   //SQL QUERIES
+//
+//        //Method (Current Researches)
+//    public void current_researches(int Teacher_Id){
+//        this. Teacher_Id= Teacher_Id;
+//        }
+//        //SQL QUERIES
+//
+//         //Method (Individual Research)
+//    public void Individual_Research(int Research_Id){
+//        this. Research_Id= Research_Id;
+//        }
+//
+//          //Method (Update Researches)
+//    public void Update_Research(int Research_Id){
+//        this. Research_Id= Research_Id;
+//        }
+//        //SQL QUERIES
+//        Connection con=null;
+//
+//           //Method (Application Close)
+//    public void Application_Close(int Application_Id){
+//        this. Application_Id= Application_Id;
+//        }
+//        //SQL QUERIES
+//        Connection con=null;
+//
         }
 

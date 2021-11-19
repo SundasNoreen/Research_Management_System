@@ -1,29 +1,31 @@
 package com.sundas.blogs;
 
 import java.sql.*;
+import java.util.ArrayList;
 
-public class Admin extends Person
+public class Admin
 {
     public ArrayList view () throws SQLException
     {
         ArrayList<Student> Students = new ArrayList<>();
+        Connection con=null;
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost/rms", "root", "");
             Class.forName("com.mysql.cj.jdbc.Driver");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM students ");
             while (rs.next()) {
-                Reg_No = rs.getString(1);
-                Degree = rs.getString(2);
-                Class=rs.getString(3);
-                Field=rs.getString(4);
-                FatherName=rs.getString(5);
-                CNIC=rs.getString(6);
-                DOB=rs.getString(7);
-                ContactNumber=rs.getString(8);
-                Email=rs.getString(9);
-                LoginId=rs.getString(10);
-                Password=rs.getString(11);
+                int Reg_No = rs.getInt(1);
+                String Degree = rs.getString(2);
+                String Class=rs.getString(3);
+                String Field=rs.getString(4);
+                String FatherName=rs.getString(5);
+                String CNIC=rs.getString(6);
+                String DOB=rs.getString(7);
+                String ContactNumber=rs.getString(8);
+                String Email=rs.getString(9);
+                int LoginId=rs.getInt(10);
+                String Password=rs.getString(11);
                 Students.add(new Student(Reg_No, Degree, Class, Field, FatherName,CNIC, DOB, ContactNumber, Email, LoginId ,Password));
             }
         }
@@ -36,20 +38,20 @@ public class Admin extends Person
         return Students;
     }
 
-    public boolean Add_Students((Reg_No, Degree, Class, Field, FatherName,CNIC, DOB, ContactNumber, Email, LoginId ,Password)) throws SQLException
+    public boolean Add_Students(int Reg_No,String  Degree, String Class, String Field, String FatherName,String CNIC,String  DOB,String ContactNumber, String Email, int LoginId ,String Password) throws SQLException
     {
         Connection con=null;
-        this.Degree=Degree;
-        this.Reg_No=Reg_No;
-        this.Class=Class;
-        this.FatherName=FatherName;
-        this.Field=Field;
-        this.CNIC=CNIC;
-        this.DOB=DOB;
-        this.ContactNumber=ContactNumber;
-        this.Email=Email;
-        this.Password=Password;
-        this.LoginId=LoginId;
+//        this.Degree=Degree;
+//        this.Reg_No=Reg_No;
+//        this.Class=Class;
+//        this.FatherName=FatherName;
+//        this.Field=Field;
+//        this.CNIC=CNIC;
+//        this.DOB=DOB;
+//        this.ContactNumber=ContactNumber;
+//        this.Email=Email;
+//        this.Password=Password;
+//        this.LoginId=LoginId;
         try
         {
             con = DriverManager.getConnection("jdbc:mysql://localhost/rms", "root", "");
@@ -65,7 +67,7 @@ public class Admin extends Person
             st.setString(7,DOB);
             st.setString(8,ContactNumber);
             st.setString(9,Email);
-            st.setint(10,LoginId);
+            st.setInt(10,LoginId);
             st.setString(11,Password);
             st.executeUpdate();
             return true;
@@ -83,22 +85,22 @@ public class Admin extends Person
     public boolean Edit_Students(int Reg_No,String Degree,String Class,String Field,String FatherName,String CNIC,String DOB,String ContactNumber,String Email,int LoginId ,String Password) throws SQLException
     {
         Connection con=null;
-        this.Degree=Degree;
-        this.Reg_No=Reg_No;
-        this.Class=Class;
-        this.FatherName=FatherName;
-        this.Field=Field;
-        this.CNIC=CNIC;
-        this.DOB=DOB;
-        this.ContactNumber=ContactNumber;
-        this.Email=Email;
-        this.Password=Password;
-        this.LoginId=id;
+//        this.Degree=Degree;
+//        this.Reg_No=Reg_No;
+//        this.Class=Class;
+//        this.FatherName=FatherName;
+//        this.Field=Field;
+//        this.CNIC=CNIC;
+//        this.DOB=DOB;
+//        this.ContactNumber=ContactNumber;
+//        this.Email=Email;
+//        this.Password=Password;
+//        this.LoginId=id;
         try
         {
             con = DriverManager.getConnection("jdbc:mysql://localhost/rms", "root", "");
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String query = "UPDATE `students` SET`Reg_No`=?, `Degree`=?, `Class`=?, `Field`=?,   `FatherName`=?,  `CNIC`=?,   'DOB'=?   ,   'ContactNumber'=? ,' Email'=? , 'LoginId'=? , 'Password'=?  WHERE LoginId  ='" + id + "'";
+            String query = "UPDATE `students` SET`Reg_No`=?, `Degree`=?, `Class`=?, `Field`=?, `FatherName`=?, `CNIC`=?, `DOB`=?, `ContactNumber`=? ,`Email`=? , `LoginId`=? , `Password`=?  WHERE `LoginId`  ='" + LoginId + "'";
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt. setInt(1,Reg_No);
             preparedStmt.setString(2,Degree);
@@ -109,7 +111,7 @@ public class Admin extends Person
             preparedStmt.setString(7,DOB);
             preparedStmt.setString(8,ContactNumber);
             preparedStmt.setString(9,Email);
-            preparedStmt.setint(10,LoginId);
+            preparedStmt.setInt(10,LoginId);
             preparedStmt.setString(11,Password);
             preparedStmt.executeUpdate();
             con.close();
@@ -127,17 +129,18 @@ public class Admin extends Person
     public boolean Delete_Students(int Reg_No,String Degree,String Class,String Field,String FatherName,String CNIC,String DOB,String ContactNumber,String Email,int LoginId ,String Password) throws SQLException
     {
         Connection con=null;
-        this.Degree=Degree;
-        this.Reg_No=Reg_No;
-        this.Class=Class;
-        this.FatherName=FatherName;
-        this.Field=Field;
-        this.CNIC=CNIC;
-        this.DOB=DOB;
-        this.ContactNumber=ContactNumber;
-        this.Email=Email;
-        this.Password=Password;
-        this.LoginId=LoginId;
+//        this.Degree=Degree;
+//        this.Reg_No=Reg_No;
+//        this.Class=Class;
+//        this.FatherName=FatherName;
+//        this.Field=Field;
+//        this.CNIC=CNIC;
+//        this.DOB=DOB;
+//        this.ContactNumber=ContactNumber;
+//        this.Email=Email;
+//        this.Password=Password;
+//        this.LoginId=LoginId;
+        try
         {
             con = DriverManager.getConnection("jdbc:mysql://localhost/rms", "root", "");
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -151,13 +154,13 @@ public class Admin extends Person
             st.setString(7,DOB);
             st.setString(8,ContactNumber);
             st.setString(9,Email);
-            st.setint(10,LoginId);
+            st.setInt(10,LoginId);
             st.setString(11,Password);
             st.executeUpdate();
             st.executeUpdate();
             return true;
         }
-        catch (Exception x)
+        catch (Exception ex)
         {
             return false;
         }

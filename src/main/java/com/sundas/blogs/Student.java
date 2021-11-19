@@ -113,7 +113,7 @@ public class Student
         this.gender=gender;
     }
 
-    Student(){}
+    Student(String reg_No, String degree, String aClass, String field, String fatherName, String CNIC, String DOB, String contactNumber, String email, String loginId, String password){}
     public boolean Login(String Email, String Password) throws SQLException
     {
         this.Email=Email;
