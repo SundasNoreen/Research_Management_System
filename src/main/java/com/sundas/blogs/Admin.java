@@ -15,7 +15,7 @@ public class Admin
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM students ");
             while (rs.next()) {
-                int Reg_No = rs.getInt(1);
+                String Reg_No = rs.getString(1);
                 String Degree = rs.getString(2);
                 String Class=rs.getString(3);
                 String Field=rs.getString(4);
@@ -24,7 +24,7 @@ public class Admin
                 String DOB=rs.getString(7);
                 String ContactNumber=rs.getString(8);
                 String Email=rs.getString(9);
-                int LoginId=rs.getInt(10);
+                String LoginId=rs.getString(10);
                 String Password=rs.getString(11);
                 Students.add(new Student(Reg_No, Degree, Class, Field, FatherName,CNIC, DOB, ContactNumber, Email, LoginId ,Password));
             }
@@ -38,7 +38,7 @@ public class Admin
         return Students;
     }
 
-    public boolean Add_Students(int Reg_No,String  Degree, String Class, String Field, String FatherName,String CNIC,String  DOB,String ContactNumber, String Email, int LoginId ,String Password) throws SQLException
+    public boolean Add_Students(String Reg_No,String  Degree, String Class, String Field, String FatherName,String CNIC,String  DOB,String ContactNumber, String Email, String LoginId ,String Password) throws SQLException
     {
         Connection con=null;
 //        this.Degree=Degree;
@@ -58,7 +58,7 @@ public class Admin
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "INSERT INTO  students(Reg_No, Degree, Class, Field, FatherName,CNIC, DOB, ContactNumber, Email, LoginId ,Password) VALUES (?,?,?,?,?,?,?,? ,?),?),?))";
             PreparedStatement st = con.prepareStatement(query);
-            st.setInt(1,Reg_No);
+            st.setString(1,Reg_No);
             st.setString(2,Degree);
             st.setString(3,Class);
             st.setString(4, Field);
@@ -67,7 +67,7 @@ public class Admin
             st.setString(7,DOB);
             st.setString(8,ContactNumber);
             st.setString(9,Email);
-            st.setInt(10,LoginId);
+            st.setString(10,LoginId);
             st.setString(11,Password);
             st.executeUpdate();
             return true;
@@ -82,7 +82,7 @@ public class Admin
             con.close();
         }
     }
-    public boolean Edit_Students(int Reg_No,String Degree,String Class,String Field,String FatherName,String CNIC,String DOB,String ContactNumber,String Email,int LoginId ,String Password) throws SQLException
+    public boolean Edit_Students(String Reg_No,String Degree,String Class,String Field,String FatherName,String CNIC,String DOB,String ContactNumber,String Email,String LoginId ,String Password) throws SQLException
     {
         Connection con=null;
 //        this.Degree=Degree;
@@ -102,7 +102,7 @@ public class Admin
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "UPDATE `students` SET`Reg_No`=?, `Degree`=?, `Class`=?, `Field`=?, `FatherName`=?, `CNIC`=?, `DOB`=?, `ContactNumber`=? ,`Email`=? , `LoginId`=? , `Password`=?  WHERE `LoginId`  ='" + LoginId + "'";
             PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt. setInt(1,Reg_No);
+            preparedStmt. setString(1,Reg_No);
             preparedStmt.setString(2,Degree);
             preparedStmt.setString(3,Class);
             preparedStmt.setString(4, Field);
@@ -111,7 +111,7 @@ public class Admin
             preparedStmt.setString(7,DOB);
             preparedStmt.setString(8,ContactNumber);
             preparedStmt.setString(9,Email);
-            preparedStmt.setInt(10,LoginId);
+            preparedStmt.setString(10,LoginId);
             preparedStmt.setString(11,Password);
             preparedStmt.executeUpdate();
             con.close();
@@ -126,7 +126,7 @@ public class Admin
             con.close();
         }
     }
-    public boolean Delete_Students(int Reg_No,String Degree,String Class,String Field,String FatherName,String CNIC,String DOB,String ContactNumber,String Email,int LoginId ,String Password) throws SQLException
+    public boolean Delete_Students(String Reg_No,String Degree,String Class,String Field,String FatherName,String CNIC,String DOB,String ContactNumber,String Email,String LoginId ,String Password) throws SQLException
     {
         Connection con=null;
 //        this.Degree=Degree;
@@ -145,7 +145,7 @@ public class Admin
             con = DriverManager.getConnection("jdbc:mysql://localhost/rms", "root", "");
             Class.forName("com.mysql.cj.jdbc.Driver");
             PreparedStatement st = con.prepareStatement("Delete FROM students WHERE Reg_No = ?,Degree= ? Class=?,FatherName=?,Field=?,CNIC=?,DOB=?,ContactNumber=?,Email=?,LoginId=?,Paaword=?" );
-            st.setInt(1,Reg_No);
+            st.setString(1,Reg_No);
             st.setString(2,Degree);
             st.setString(3,Class);
             st.setString(4, Field);
@@ -154,7 +154,7 @@ public class Admin
             st.setString(7,DOB);
             st.setString(8,ContactNumber);
             st.setString(9,Email);
-            st.setInt(10,LoginId);
+            st.setString(10,LoginId);
             st.setString(11,Password);
             st.executeUpdate();
             st.executeUpdate();
