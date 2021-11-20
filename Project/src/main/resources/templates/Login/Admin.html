@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th=“http://www.thymeleaf.org”>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Administrator Login</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/University_of_Engineering_and_Technology_Lahore_logo.svg/1200px-University_of_Engineering_and_Technology_Lahore_logo.svg.png"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/ionicons.min.css">
+    <link rel="stylesheet" href="css/Login.css">
+</head>
+<section class="login-clean">
+    <form method="post" th:action="@{'/Administrator_Login'}">
+        <h2 class="visually-hidden"></h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <div class="mb-3"><input type="text" class="form-control" name="email" id="username" placeholder="UserName"  required/></div>
+        <div class="mb-3"><input type="password" class="form-control" id="password" name="password" placeholder="Password" required /></div>
+        <div class="forgot">
+            <center><input class="checkmark" type="checkbox" onclick="myFunction()">  Show Password</center>
+        </div>
+        <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Log In</button></div>
+        <p style="text-align: center;font-size: 14px; color: red" id="error" th:text="${Message}">Message.</p>
+    </form>
+</section>
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "text") {
+            x.type = "password";
+
+        } else {
+            x.type = "text";
+        }
+    }
+</script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script></html>
