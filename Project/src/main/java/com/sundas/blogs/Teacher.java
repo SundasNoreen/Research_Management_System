@@ -120,7 +120,7 @@ public class Teacher
         Weight_Qual = weight_Qual;
     }
 
-    // By SUNDAS NOREEN
+    // By AAIZA NAEEM
     public boolean Login(String Email, String Password) throws SQLException
     {
         try
@@ -151,6 +151,7 @@ public class Teacher
 
     ArrayList<Teacher> Teachers = new ArrayList<Teacher>();
 
+    // By AYESHA NADEEM
     public ArrayList<Teacher> GetTeachersList() throws SQLException
     {
         Teachers.clear();
@@ -186,6 +187,8 @@ public class Teacher
         }
         return Teachers;
     }
+
+    // By AYESHA NADEEM
     public ArrayList<Teacher> Teacher_Details(int Teacher_Id) throws SQLException
     {
         this.Teacher_Id=Teacher_Id;
