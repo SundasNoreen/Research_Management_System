@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e3f66a0c-da09-4119-864a-0071e735e258" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\Sundas\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1p4RgzlQHrpPoPZGIFrpmkIrEnh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="C:/Admin (1).java" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RunManager" selected="Application.BlogsApplication">
+    <configuration name="Admin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.Admin" />
+      <module name="blogs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundas.blogs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.Application" />
+      <module name="blogs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogsApplication" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.BlogsApplication" />
+      <module name="blogs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CSVConsume" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.CSVConsume" />
+      <module name="blogs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundas.blogs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClosedResearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.ClosedResearch" />
+      <module name="blogs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundas.blogs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Research_Opportunities" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.Research_Opportunities" />
+      <module name="blogs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundas.blogs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Teacher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.Teacher" />
+      <module name="blogs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundas.blogs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="blogs" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sundas.blogs.BlogsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BlogsApplication" />
+      <item itemvalue="Application.Application" />
+      <item itemvalue="Application.ClosedResearch" />
+      <item itemvalue="Application.Research_Opportunities" />
+      <item itemvalue="Application.Admin" />
+      <item itemvalue="Application.Teacher" />
+      <item itemvalue="Application.CSVConsume" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CSVConsume" />
+        <item itemvalue="Application.Teacher" />
+        <item itemvalue="Application.ClosedResearch" />
+        <item itemvalue="Application.Admin" />
+        <item itemvalue="Application.Research_Opportunities" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3f66a0c-da09-4119-864a-0071e735e258" name="Default Changelist" comment="" />
+      <created>1614440493145</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614440493145</updated>
+      <workItem from="1614440494331" duration="876000" />
+      <workItem from="1614441417398" duration="207000" />
+      <workItem from="1614610519827" duration="527000" />
+      <workItem from="1614658840529" duration="3593000" />
+      <workItem from="1614952070324" duration="1494000" />
+      <workItem from="1615208129702" duration="606000" />
+      <workItem from="1615269608880" duration="3299000" />
+      <workItem from="1615283603105" duration="160000" />
+      <workItem from="1615868929256" duration="61000" />
+      <workItem from="1615881336848" duration="326000" />
+      <workItem from="1616625317676" duration="127000" />
+      <workItem from="1634228178425" duration="590000" />
+      <workItem from="1634232435051" duration="16597000" />
+      <workItem from="1634329132405" duration="17000" />
+      <workItem from="1634368415650" duration="9910000" />
+      <workItem from="1634449999516" duration="25206000" />
+      <workItem from="1634525921405" duration="2298000" />
+      <workItem from="1634623493676" duration="19000" />
+      <workItem from="1634736809514" duration="1306000" />
+      <workItem from="1634742128396" duration="105000" />
+      <workItem from="1634806743714" duration="2195000" />
+      <workItem from="1634971465711" duration="1009000" />
+      <workItem from="1635053976792" duration="6909000" />
+      <workItem from="1635093774547" duration="9453000" />
+      <workItem from="1635846224913" duration="315000" />
+      <workItem from="1635848420451" duration="16309000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="15" y="11" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636289095120">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="15" y="11" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1636289095120" />
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1638206983031">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1638206983031" />
+    <state x="290" y="158" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1636289087447">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="290" y="158" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1636289087447" />
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1638159813370">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1638159813370" />
+    <state width="1322" height="432" key="GridCell.Tab.0.bottom" timestamp="1638707295676">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="432" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
+    <state width="1322" height="432" key="GridCell.Tab.0.center" timestamp="1638707295676">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="432" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
+    <state width="1322" height="432" key="GridCell.Tab.0.left" timestamp="1638707295676">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="432" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
+    <state width="1322" height="432" key="GridCell.Tab.0.right" timestamp="1638707295676">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="432" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
+    <state width="1322" height="426" key="GridCell.Tab.1.bottom" timestamp="1638698966862">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="426" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
+    <state width="1322" height="426" key="GridCell.Tab.1.center" timestamp="1638698966862">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="426" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
+    <state width="1322" height="426" key="GridCell.Tab.1.left" timestamp="1638698966862">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="426" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
+    <state width="1322" height="426" key="GridCell.Tab.1.right" timestamp="1638698966862">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="426" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1636823583976">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1636823583976" />
+    <state x="266" y="0" width="964" height="703" key="dock-window-1" timestamp="1636645275657">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="266" y="0" width="964" height="703" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1636645275657" />
+    <state x="339" y="157" key="run.anything.popup" timestamp="1636276128919">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1636276128919" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1637319165804">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1637319165804" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/ClosedResearch.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/Research_Tracker.java</url>
+          <line>62</line>
+          <properties class="com.sundas.blogs.Research_Tracker" method="setAuthor">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/Student.java</url>
+          <line>66</line>
+          <properties class="com.sundas.blogs.Student" method="getClassName">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
