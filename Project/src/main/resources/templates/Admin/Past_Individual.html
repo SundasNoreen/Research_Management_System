@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Admin - RMS</title>
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/University_of_Engineering_and_Technology_Lahore_logo.svg/1200px-University_of_Engineering_and_Technology_Lahore_logo.svg.png"/>
-
     <link rel="stylesheet" href="/bootstrap/css/bootstrap1.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
@@ -60,51 +59,59 @@
                 </div>
             </nav>
             <div class="container-fluid">
-                <h5 style="text-transform:uppercase; color:black"><center><strong>Research Work Details</strong></center></h5>
+                <h5 style="text-transform:uppercase; color:black">
+                    <center><strong>Research Work Details</strong></center>
+                </h5>
                 <div class="card shadow" style="margin-bottom:20px;">
                     <div class="card-body" style="text-align:justify;font-size:15px" th:each="b: ${b}">
                         <div class="row">
                             <div class="col-md-4" >
                                 <p style="font-weight:bold; color:black;">Title of Research:</p>
-                                <p th:text="${b.Title}">Title of Research:</p></div>
+                                <p th:text="${b.Title}">Title of Research:</p>
+                            </div>
                             <div class="col-md-4">
                                 <p style=" font-weight:bold; color:black;">Domain:</p>
-                                <p  th:text="${b.Domain}">Title of Research:</p></div>
+                                <p  th:text="${b.Domain}">Title of Research:</p>
+                            </div>
                             <div class="col-md-4">
                                 <p style=" font-weight:bold; color:black;">Status:</p>
-                                <p th:text="${b.Status}">Title of Research:</p></div></div>
+                                <p th:text="${b.Status}">Title of Research:</p>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-md-4" >
                                 <p style="font-weight:bold; color:black;">Starting Date:</p>
-                                <p  th:text="${#dates.format(b.Starting_Date, 'dd-MMM-yyyy')}">Title of Research:</p></div>
+                                <p  th:text="${#dates.format(b.Starting_Date, 'dd-MMM-yyyy')}">Title of Research:</p>
+                            </div>
                             <div class="col-md-4">
                                 <p style="font-weight:bold; color:black;">Ending Date:</p>
-                                <p  th:text="${#dates.format(b.Ending_Date, 'dd-MMM-yyyy')}">Title of Research:</p></div>
+                                <p  th:text="${#dates.format(b.Ending_Date, 'dd-MMM-yyyy')}">Title of Research:</p>
+                            </div>
                             <div class="col-md-4">
-                                <p style="font-weight:bold; color:black;">Success Level:</p>
-                                <p  th:text="${b.Success_Level}">Title of Research:</p></div>
-
-                            <p style="font-weight:bold; color:black;">Conducted by:</p>
-                            <p th:text="${b.Teacher}">Title of Research:</p>
-                            <p style="font-weight:bold; color:black;">Students:</p>
-                            <p  th:utext="${#strings.replace(b.Students,'&#10;','&lt;br&gt;')}">Title of Research:</p>
-                            <p style=" font-weight:bold; color:black;">View Report:</p>
-                            <p ><a  target="_blank" th:href="${b.Link}" th:text="${b.Title}"></a>
-                            </p>
-                            <p style="font-weight:bold; color:black;">Abstract:</p>
-                            <p  th:utext="${#strings.replace(b.Abstract,'&#10;','&lt;br&gt;')}">Title of Research:</p>
-                            <p style="font-weight:bold; color:black;">Conclusion:</p>
-                            <p  th:utext="${#strings.replace(b.Conclusion,'&#10;','&lt;br&gt;')}">Title of Research:</p>
+                                <p style="font-weight:bold; color:black;">Conducted by:</p>
+                                <p th:text="${b.Teacher}">Title of Research:</p>
+                            </div>
                         </div>
+                        <p style="font-weight:bold; color:black;">Students:</p>
+                        <p  th:utext="${#strings.replace(b.Students,'&#10;','&lt;br&gt;')}">Title of Research:</p>
+                        <p style=" font-weight:bold; color:black;">View Report:</p>
+                        <p ><a  target="_blank" th:href="${b.Link}" th:text="${b.Title}"></a>
+                        </p>
+                        <p style="font-weight:bold; color:black;">Abstract:</p>
+                        <p  th:utext="${#strings.replace(b.Abstract,'&#10;','&lt;br&gt;')}">Title of Research:</p>
+                        <p style="font-weight:bold; color:black;">Conclusion:</p>
+                        <p  th:utext="${#strings.replace(b.Conclusion,'&#10;','&lt;br&gt;')}">Title of Research:</p>
                     </div>
                 </div>
-            </div></div></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 <a class="border rounded d-inline scroll-to-top" style="color:white; background:teal" href="#page-top"><i class="fas fa-angle-up"></i></a>
-
 <script src="/js/chart.min.js"></script>
 <script src="/js/bs-init.js"></script>
 <script src="/js/theme.js"></script>
 <script id="bs-live-reload" data-sseport="52540" data-lastchange="1636802469381" src="/js/livereload.js"></script>
-
 </body>
 </html>

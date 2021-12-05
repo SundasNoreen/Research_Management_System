@@ -80,12 +80,10 @@
                                 <p  th:text="${b.Domain}">Title of Research:</p>
                             </div>
                             <div class="col-md-4">
-                                <p style="font-weight:bold; color:black;">Progress:</p>
-                                <p  th:text="${b.Progress}">Title of Research:</p>
+                                <p style="font-weight:bold; color:black;">Conducted by:</p>
+                                <p  th:text="${b.Teacher}">Title of Research:</p>
                             </div>
                         </div>
-                        <p style="font-weight:bold; color:black;">Conducted by:</p>
-                        <p  th:text="${b.Teacher}">Title of Research:</p>
                         <p style="font-weight:bold; color:black;">Students:</p>
                         <p  th:utext="${#strings.replace(b.Students,'&#10;','&lt;br&gt;')}">Title of Research:</p>
                         <p style="font-weight:bold; color:black;">About the Research:</p>

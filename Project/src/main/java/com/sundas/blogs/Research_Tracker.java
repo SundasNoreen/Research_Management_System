@@ -1,9 +1,5 @@
 package com.sundas.blogs;
 
-import com.sun.tools.javac.Main;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-
-import javax.naming.Name;
 import java.sql.*;
 import java.util.ArrayList;
 import java.sql.Date;
@@ -24,9 +20,8 @@ public class Research_Tracker
     private Date Review;
     public Statement stmt,stmt2,stmt3;
     public ResultSet rs,rt,ru;
-    String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-    public Connection con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
-
+    String url ="jdbc:mysql://localhost/rms";
+    public Connection con =  DriverManager.getConnection(url, "root", "");
     public ArrayList<Research_Tracker> Tracks = new ArrayList<Research_Tracker>();
 
     public String getName() {

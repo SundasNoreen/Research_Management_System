@@ -1,6 +1,7 @@
 package com.sundas.blogs;
 
 import java.sql.*;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.EnumMap;
@@ -21,15 +22,15 @@ public class Teacher
     private String LoginId;
     private String Password;
     private String gender;
-    String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    Connection con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
-    Statement stmt;
+    private String extra;
+    String url ="jdbc:mysql://localhost/rms";
+    public Connection con =  DriverManager.getConnection(url, "root", "");Statement stmt;
     ResultSet rs;
 
     public Teacher() throws SQLException {
     }
 
-    public Teacher(int Teacher_Id,String Name,String Department,String FatherName,String CNIC,Date DOB,String Weight_Qual,String Majors,String ContactNumber,String Email,String gender) throws SQLException
+    public Teacher(int Teacher_Id,String Name,String Department,String FatherName,String CNIC,Date DOB,String Weight_Qual,String Majors,String ContactNumber,String Email,String gender,String LoginId, String Password) throws SQLException
     {
         this.Teacher_Id=Teacher_Id;
         this.Name=Name;
@@ -42,28 +43,37 @@ public class Teacher
         this.ContactNumber=ContactNumber;
         this.Email= Email;
         this.gender=gender;
+        this.LoginId=LoginId;
+        this.Password=Password;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+    public void setExtra(String extra) {
+        this.extra = extra;
     }
     public void setPassword(String password) {
-        Password = password;
+        this.Password = password;
     }
     public String getGender() {
         return gender;
     }
     public void setLoginId(String loginId) {
-        LoginId = loginId;
+        this.LoginId = loginId;
     }
     public void setFatherName(String fatherName) {
-        FatherName = fatherName;
+        this.FatherName = fatherName;
     }
     public void setEmail(String email) {
-        Email = email;
+        this.Email = email;
     }
     public void setDOB(Date DOB) {
         this.DOB = DOB;
     }
     public void setGender(String gender){this.gender=gender;}
     public void setContactNumber(String contactNumber) {
-        ContactNumber = contactNumber;
+        this.ContactNumber = contactNumber;
     }
     public void setCNIC(String CNIC) {
         this.CNIC = CNIC;
@@ -105,19 +115,19 @@ public class Teacher
         return Weight_Qual;
     }
     public void setMajors(String majors) {
-        Majors = majors;
+        this.Majors = majors;
     }
     public void setDepartment(String department) {
-        Department = department;
+        this.Department = department;
     }
     public void setName(String name) {
-        Name = name;
+        this.Name = name;
     }
     public void setTeacher_Id(int teacher_Id) {
-        Teacher_Id = teacher_Id;
+        this.Teacher_Id = teacher_Id;
     }
     public void setWeight_Qual(String weight_Qual) {
-        Weight_Qual = weight_Qual;
+        this.Weight_Qual = weight_Qual;
     }
 
     // By AAIZA NAEEM
@@ -159,7 +169,7 @@ public class Teacher
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM `teachers` WHERE `Active`= 1");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM `teachers` WHERE `Active`=1");
             while (rs.next())
             {
                 Teacher_Id=rs.getInt(1);
@@ -172,9 +182,10 @@ public class Teacher
                 Majors=rs.getString(8);
                 ContactNumber=rs.getString(9);
                 Email=rs.getString(10);
-                gender=rs.getString(14);
-                System.out.println(Teacher_Id+Department+Name);
-                Teachers.add(new Teacher(Teacher_Id,Name,Department,FatherName,CNIC,DOB,Weight_Qual,Majors,ContactNumber,Email,gender));
+                gender=rs.getString(13);
+                LoginId=rs.getString(11);
+                Password=rs.getString(12);
+                Teachers.add(new Teacher(Teacher_Id,Name,Department,FatherName,CNIC,DOB,Weight_Qual,Majors,ContactNumber,Email,gender,LoginId,Password));
             }
         }
         catch (Exception ex)
@@ -209,8 +220,10 @@ public class Teacher
                 Majors=rs.getString(8);
                 ContactNumber=rs.getString(9);
                 Email=rs.getString(10);
-                gender=rs.getString(14);
-                Teachers.add(new Teacher(Teacher_Id,Name,Department,FatherName,CNIC,DOB,Weight_Qual,Majors,ContactNumber,Email,gender));
+                gender=rs.getString(13);
+                LoginId=rs.getString(11);
+                Password=rs.getString(12);
+                Teachers.add(new Teacher(Teacher_Id,Name,Department,FatherName,CNIC,DOB,Weight_Qual,Majors,ContactNumber,Email,gender,LoginId,Password));
             }
         }
         catch (Exception ex)
@@ -222,6 +235,98 @@ public class Teacher
             con.close();
         }
         return Teachers;
+    }
+
+    // By SUNDAS NOREEN
+    public boolean Add_Teacher_Ind(String Name,String FatherName,String Department,String Majors,String Weight_Qual,String CNIC,String D,String ContactNumber,String Email,String gender,String LoginId,String Password) throws SQLException, ParseException {
+        this.Name=Name;
+        this.Department=Department;
+        this.FatherName=FatherName;
+        this.CNIC=CNIC;
+        this.Weight_Qual=Weight_Qual;
+        this.Majors=Majors;
+        this.ContactNumber=ContactNumber;
+        this.Email= Email;
+        this.gender=gender;
+        java.sql.Date date1= java.sql.Date.valueOf(D);
+        boolean flag=false;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String query = "INSERT INTO `teachers`(`Department`, `Name`, `FatherName`, `CNIC`, `DOB`, `Weight_Qual`, `Majors`, `ContactNumber`, `Email`, `LoginId`, `Password`, `Gender`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement st = con.prepareStatement(query);
+            st.setString(1, Department);
+            st.setString(2, Name);
+            st.setString(3, FatherName);
+            st.setString(4, CNIC);
+            st.setDate(5, date1);
+            st.setString(6, Weight_Qual);
+            st.setString(7, Majors);
+            st.setString(8, ContactNumber);
+            st.setString(9, Email);
+            st.setString(10, LoginId);
+            st.setString(11, Password);
+            st.setString(12, gender);
+            st.executeUpdate();
+            System.out.println("Added Successfully");
+            flag = true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            con.close();
+        }
+        return flag;
+    }
+
+    // By SUNDAS NOREEN
+    public boolean Delete_Teacher(int Teacher_Id) throws SQLException
+    {
+        this.Teacher_Id=Teacher_Id;
+        boolean flag=false;
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate("UPDATE `teachers` SET `Active`=0 WHERE `Teacher_Id`='"+Teacher_Id+"'");
+            flag=true;
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+        finally
+        {
+            con.close();
+        }
+        return flag;
+    }
+
+    // By AYESHA NADEEM
+    public boolean Update_Teacher_Ind(int Teacher_Id,String Weight_Qual, String Majors,String ContactNumber,String Email,String Password) throws SQLException, ParseException {
+        this.Teacher_Id=Teacher_Id;
+        this.Weight_Qual=Weight_Qual;
+        this.Majors=Majors;
+        this.ContactNumber=ContactNumber;
+        this.Email=Email;
+        this.Password=Password;
+        boolean flag=false;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String query = "UPDATE `teachers` SET `Weight_Qual`=?,`Majors`=?,`ContactNumber`=?,`Email`=?,`Password`=? WHERE `Teacher_Id`='"+Teacher_Id+"'";
+            PreparedStatement st = con.prepareStatement(query);
+            st.setString(1, Weight_Qual);
+            st.setString(2, Majors);
+            st.setString(3, ContactNumber);
+            st.setString(4, Email);
+            st.setString(5, Password);
+            st.executeUpdate();
+            System.out.println("Updated Successfully");
+            flag = true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            con.close();
+        }
+        return flag;
     }
 
 }

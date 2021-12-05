@@ -15,8 +15,6 @@ public class Application {
     public String Reason;
     public String Semester;
     public String Status;
-    String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-    public Connection con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
     public Statement stmt, stmt2, stmt3, stmt4;
     public String Name;
     public Date Submission;
@@ -24,7 +22,8 @@ public class Application {
     public int Teacher_Id;
     public String Title;
     public static ResultSet rs, ru, rt, rv;
-
+    String url ="jdbc:mysql://localhost/rms";
+    public Connection con =  DriverManager.getConnection(url, "root", "");
     public void setApplication_Id(int application_Id) {
         Application_Id = application_Id;
     }
@@ -115,7 +114,7 @@ public class Application {
 
     // By SUNDAS NOREEN
     public ArrayList < Application > SetData(int Opportunity_Id, String Student_Id) throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+ Class.forName("com.mysql.cj.jdbc.Driver");
         stmt = con.createStatement();
         App.clear();
         this.Student_Id = Student_Id;
@@ -153,9 +152,7 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean Apply(int Opportunity_Id, String Student_Id, String CGPA, String Degree, String Field, String Reason, String Status, String Semester) throws SQLException {
-        System.out.println(Student_Id + CGPA);
-        boolean flag = false;
-        Connection con = null;
+ boolean flag = false;
         this.Opportunity_Id = Opportunity_Id;
         this.CGPA = CGPA;
         this.Degree = Degree;
@@ -190,9 +187,7 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean Edit(int Application_Id, String Student_Id, String CGPA, String Degree, String Field, String Reason, String Status, String Semester) throws SQLException {
-        System.out.println(Student_Id + CGPA);
-        boolean flag = false;
-        Connection con = null;
+  boolean flag = false;
         this.Application_Id = Application_Id;
         this.CGPA = CGPA;
         this.Degree = Degree;
@@ -205,7 +200,6 @@ public class Application {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "UPDATE `application` SET `CGPA`=?,`Degree`=?,`Field`=?,`Reason`=?,`Semester`=? WHERE `Application_Id`=?";
             PreparedStatement st = con.prepareStatement(query);
-            System.out.println(Student_Id);
             st.setString(1, CGPA);
             st.setString(2, Degree);
             st.setString(3, Field);
@@ -225,9 +219,7 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean Check(int Opportunity_Id, String Student_Id) throws SQLException {
-        System.out.println(Student_Id + CGPA);
         boolean flag = false;
-        Connection con = null;
         this.Opportunity_Id = Opportunity_Id;
         this.Student_Id = Student_Id;
         try {
@@ -250,8 +242,7 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean CheckStatus(int Application_Id) throws SQLException {
-        boolean flag = false;
-        Connection con = null;
+     boolean flag = false;
         this.Application_Id = Application_Id;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

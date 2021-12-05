@@ -13,7 +13,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Admin - RMS</title>
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/University_of_Engineering_and_Technology_Lahore_logo.svg/1200px-University_of_Engineering_and_Technology_Lahore_logo.svg.png"/>
-
     <link rel="stylesheet" href="/bootstrap/css/bootstrap1.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
@@ -65,9 +64,9 @@
                 </h5>
                 <div class="card shadow" style="margin-bottom:20px;">
                     <div class="card-body" style="text-align:justify;font-size:15px" th:each="b: ${b}">
-<!--                        <div class="row">-->
-<!--                            <a th:href="@{/Change_Password_{id}(id = ${b.Reg_No})}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:teal; text-align:center; text-decoration:none;text-transform:uppercase">Change Password</a>-->
-<!--                        </div>-->
+                        <!--                        <div class="row">-->
+                        <!--                            <a th:href="@{/Change_Password_{id}(id = ${b.Reg_No})}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:teal; text-align:center; text-decoration:none;text-transform:uppercase">Change Password</a>-->
+                        <!--                        </div>-->
                         <div class="row">
                             <div class="col-md-4" >
                                 <p style="font-weight:bold; color:black;">Registration Number:</p>
@@ -114,7 +113,6 @@
                                 <p th:text="${b.Email}">Title of Research:</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

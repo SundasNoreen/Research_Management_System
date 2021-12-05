@@ -8,9 +8,8 @@ public class Domains {
     public String Name;
     public String About;
     public int No;
-    String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-    public Connection con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
-    Statement stmt;
+    String url ="jdbc:mysql://localhost/rms";
+    public Connection con =  DriverManager.getConnection(url, "root", "");Statement stmt;
     ResultSet rs;
 
     Domains() throws SQLException {}

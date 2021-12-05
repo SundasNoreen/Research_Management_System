@@ -6,7 +6,7 @@
       {
       font-family: "Century Gothic";
       }
-      #fonts {font-size:14px;}
+      .container-fluid {font-size:14px;}
    </style>
 <head>
     <meta charset="utf-8">
@@ -16,9 +16,16 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap1.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/font-awesome1.min.css">
     <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
     <script src="/bootstrap/js/bootstrap1.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/js/bs-init.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body id="page-top">
 <div id="wrapper">
@@ -64,27 +71,29 @@
                 </h5>
                 <div class="card shadow" style="margin-bottom:20px;">
                     <div class="card-body">
+                        <div class="row">
+                            <a th:href="@{/Add_Admin_Ind}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:teal; text-align:center; text-decoration:none;text-transform:uppercase">Add Admin</a>
+                        </div>
                         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                             <table id="myTable" class="table my-0">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Address</th>
-                                    <th>CNIC</th>
                                     <th>Contact Number</th>
                                     <th>Role</th>
+                                    <th>Options</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr th:each="b: ${b}">
                                     <td th:text="${b.Name}">Teacher</td>
                                     <td th:text="${b.Email}">Tokyo</td>
-                                    <td th:text="${b.Address}">Tokyo</td>
-                                    <td th:text="${b.CNIC}">Tokyo</td>
                                     <td th:text="${b.ContactNumber}">Tokyo</td>
                                     <td th:text="${b.Role}">Tokyo</td>
-                                </tr>
+                                    <td><a style="color:teal;" th:href="@{/Edit_Admin_{id}(id = ${b.Admin_Id})}" th:text="Edit">Edit</a>
+                                        <a style="color:teal;" th:href="@{/Delete_Admin_{id}(id = ${b.Admin_Id})}" th:text="Delete">Delete</a>
+                                    </td>
                                 </tbody>
                             </table>
                         </div>

@@ -19,9 +19,8 @@ public class Research_Opportunities {
     public String About;
     public String CGPA;
     public int count;
-    String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-    public Connection con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
-    public Statement stmt, stmt2, stmt3;
+    String url ="jdbc:mysql://localhost/rms";
+    public Connection con =  DriverManager.getConnection(url, "root", "");public Statement stmt, stmt2, stmt3;
     public static ResultSet rs, ru, rt;
 
     ArrayList < Research_Opportunities > Research = new ArrayList < Research_Opportunities > ();

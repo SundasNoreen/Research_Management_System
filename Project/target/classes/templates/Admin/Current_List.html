@@ -6,7 +6,7 @@
       {
       font-family: "Century Gothic";
       }
-      #fonts {font-size:14px;}
+      .container-fluid {font-size:14px;}
    </style>
 <head>
     <meta charset="utf-8">
@@ -16,9 +16,16 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap1.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/font-awesome1.min.css">
     <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
     <script src="/bootstrap/js/bootstrap1.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/js/bs-init.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body id="page-top">
 <div id="wrapper">
@@ -60,7 +67,7 @@
             </nav>
             <div class="container-fluid">
                 <h5 style="text-transform:uppercase; color:black">
-                    <center><strong>Ongoing Researches</strong></center>
+                    <center><strong>Current Researches</strong></center>
                 </h5>
                 <div class="card shadow" style="margin-bottom:20px;">
                     <div class="card-body">
@@ -72,7 +79,6 @@
                                     <th>Teacher Name</th>
                                     <th>Domain</th>
                                     <th>Started From</th>
-                                    <th>Progress</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -81,7 +87,6 @@
                                     <td th:text="${b.Teacher}">Teacher</td>
                                     <td th:text="${b.Domain}">Tokyo</td>
                                     <td th:text="${#dates.format(b.Starting_Date, 'dd-MMM-yyyy')}">22-Nov-2021</td>
-                                    <td th:text="${b.Progress}">Advance</td>
                                 </tr>
                                 </tbody>
                             </table>

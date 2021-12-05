@@ -6,20 +6,26 @@
       {
       font-family: "Century Gothic";
       }
-      #fonts {font-size:14px;}
+      .container-fluid {font-size:14px;}
    </style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Admin - RMS</title>
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/University_of_Engineering_and_Technology_Lahore_logo.svg/1200px-University_of_Engineering_and_Technology_Lahore_logo.svg.png"/>
-
     <link rel="stylesheet" href="/bootstrap/css/bootstrap1.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/font-awesome1.min.css">
     <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
     <script src="/bootstrap/js/bootstrap1.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/js/bs-init.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body id="page-top">
 <div id="wrapper">
@@ -43,7 +49,7 @@
     </nav>
     <div style="background:#f9ffe5;" class="d-flex flex-column" id="content-wrapper">
         <div id="content">
-            < class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                 <div class="container-fluid">
                     <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" style="color:teal;" type="button"><i class="fas fa-bars"></i></button>
                     <ul  class="navbar-nav flex-nowrap ms-auto">
@@ -58,11 +64,10 @@
                         </li>
                     </ul>
                 </div>
-
-    </nav>
+            </nav>
             <div class="container-fluid">
                 <h5 style="text-transform:uppercase; color:black">
-                    <center><strong>My Past Researches</strong></center>
+                    <center><strong>PAST RESEARCHES</strong></center>
                 </h5>
                 <div class="card shadow" style="margin-bottom:20px;">
                     <div class="card-body">

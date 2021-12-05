@@ -6,20 +6,26 @@
       {
       font-family: "Century Gothic";
       }
-      #fonts {font-size:14px;}
+      .container-fluid {font-size:14px;}
    </style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Admin - RMS</title>
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/University_of_Engineering_and_Technology_Lahore_logo.svg/1200px-University_of_Engineering_and_Technology_Lahore_logo.svg.png"/>
-
     <link rel="stylesheet" href="/bootstrap/css/bootstrap1.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/font-awesome1.min.css">
     <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
     <script src="/bootstrap/js/bootstrap1.min.js"></script>
+    <script src="/js/chart.min.js"></script>
+    <script src="/js/bs-init.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body id="page-top">
 <div id="wrapper">
@@ -65,6 +71,9 @@
                 </h5>
                 <div class="card shadow" style="margin-bottom:20px;">
                     <div class="card-body">
+                        <div class="row">
+                            <a th:href="@{/Add_Teacher_Ind}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:teal; text-align:center; text-decoration:none;text-transform:uppercase">Add Teachers</a>
+                        </div>
                         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                             <table id="myTable" class="table my-0">
                                 <thead>
@@ -72,18 +81,21 @@
                                     <th>Name</th>
                                     <th>Father Name</th>
                                     <th>Department</th>
-                                    <th>Qualification</th>
-                                    <th>Contact Number</th>
+                                    <th>Majors</th>
+                                    <th>Email</th>
+                                    <th>Options</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr th:each="b: ${b}">
-                                    <td><a style="color:teal; text-decoration:none;" th:href="@{/Teacher_Details_{id}(id = ${b.Teacher_Id})}" th:text="${b.Name}">Title</a></td>
+                                    <td><a style="color:teal; text-decoration:none;" th:href="@{/Teacher_Details_{id}(id = ${b.Teacher_Id})}" th:text="${b.Name}">Teacher</td>
                                     <td th:text="${b.FatherName}">Tokyo</td>
                                     <td th:text="${b.Department}">Tokyo</td>
-                                    <td th:text="${b.Weight_Qual}">Tokyo</td>
-                                    <td th:text="${b.ContactNumber}">Tokyo</td>
-                                </tr>
+                                    <td th:text="${b.Majors}">Tokyo</td>
+                                    <td th:text="${b.Email}">Tokyo</td>
+                                    <td><a style="color:teal;" th:href="@{/Edit_Teacher_{id}(id = ${b.Teacher_Id})}" th:text="Edit">Edit</a>
+                                        <a style="color:teal;" th:href="@{/Delete_Teacher_{id}(id = ${b.Teacher_Id})}" th:text="Delete">Delete</a>
+                                    </td>
                                 </tbody>
                             </table>
                         </div>

@@ -16,9 +16,8 @@ public class ClosedResearch {
     public Date Ending_Date;
     public String Abstract;
     public String Conclusion;
-    String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-    public Connection con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
-    public Blob Report;
+    String url ="jdbc:mysql://localhost/rms";
+    public Connection con =  DriverManager.getConnection(url, "root", "");public Blob Report;
     public String Status;
     public String Link;
     public String Students = "";

@@ -12,9 +12,8 @@ public class OpenResearch {
     public String Domain;
     public Date Starting_Date;
     public String About;
-    public String Progress;
-    String url ="jdbc:mysql://rms2021.mysql.database.azure.com:3306/rms?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-    public Connection con =  DriverManager.getConnection(url, "rms2021@rms2021", "2019ce3@rms");
+    String url ="jdbc:mysql://localhost/rms";
+    public Connection con =  DriverManager.getConnection(url, "root", "");
     public String Students = "";
     Statement stmt1, stmt2, stmt3;
     ResultSet rs, rt, ru;
@@ -23,7 +22,7 @@ public class OpenResearch {
 
     OpenResearch() throws SQLException {}
 
-    OpenResearch(int Research_Id, String Teacher, int Teacher_id, String Title, String Domain, Date Starting_Date, String About, String Progress) throws SQLException {
+    OpenResearch(int Research_Id, String Teacher, int Teacher_id, String Title, String Domain, Date Starting_Date, String About) throws SQLException {
         this.Research_Id = Research_Id;
         this.Teacher = Teacher;
         this.Title = Title;
@@ -31,10 +30,9 @@ public class OpenResearch {
         this.Domain = Domain;
         this.Starting_Date = Starting_Date;
         this.About = About;
-        this.Progress = Progress;
     }
 
-    OpenResearch(int Research_Id, String Teacher, int Teacher_id, String Students, String Title, String Domain, Date Starting_Date, String About, String Progress) throws SQLException {
+    OpenResearch(int Research_Id, String Teacher, int Teacher_id, String Students, String Title, String Domain, Date Starting_Date, String About) throws SQLException {
         this.Research_Id = Research_Id;
         this.Teacher = Teacher;
         this.Title = Title;
@@ -43,7 +41,6 @@ public class OpenResearch {
         this.Domain = Domain;
         this.Starting_Date = Starting_Date;
         this.About = About;
-        this.Progress = Progress;
     }
 
     // By SUNDAS NOREEN
@@ -51,7 +48,7 @@ public class OpenResearch {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Open.clear();
-
+            stmt1= con.createStatement();
             String query = "SELECT * FROM `student_research_open` WHERE  `Student_Id`='" + Reg_No + "'";
             rt = stmt1.executeQuery(query);
             while (rt.next()) {
@@ -65,7 +62,6 @@ public class OpenResearch {
                     Domain = rs.getString(4);
                     Starting_Date = rs.getDate(5);
                     About = rs.getString(6);
-                    Progress = rs.getString(7);
                     stmt3 = con.createStatement();
                     ru = stmt3.executeQuery("SELECT * FROM `teachers`");
                     while (ru.next()) {
@@ -73,10 +69,11 @@ public class OpenResearch {
                             Teacher = ru.getString(3);
                         }
                     }
-                    Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Title, Domain, Starting_Date, About, Progress));
+                    Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Title, Domain, Starting_Date, About));
                 }
             }
         } catch (Exception ex) {
+            System.out.println(ex.getMessage());
             System.out.println("Failed to Load opportunities.");
         } finally {
             con.close();
@@ -111,7 +108,6 @@ public class OpenResearch {
                 Domain = rs.getString(4);
                 Starting_Date = rs.getDate(5);
                 About = rs.getString(6);
-                Progress = rs.getString(7);
                 stmt3 = con.createStatement();
                 ru = stmt3.executeQuery("SELECT * FROM `teachers`");
                 while (ru.next()) {
@@ -119,7 +115,7 @@ public class OpenResearch {
                         Teacher = ru.getString(3);
                     }
                 }
-                Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Students, Title, Domain, Starting_Date, About, Progress));
+                Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Students, Title, Domain, Starting_Date, About));
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -144,7 +140,6 @@ public class OpenResearch {
                     Domain = rs.getString(4);
                     Starting_Date = rs.getDate(5);
                     About = rs.getString(6);
-                    Progress = rs.getString(7);
                     stmt3 = con.createStatement();
                     ru = stmt3.executeQuery("SELECT * FROM `teachers`");
                     while (ru.next()) {
@@ -152,7 +147,7 @@ public class OpenResearch {
                             Teacher = ru.getString(3);
                         }
                     }
-                    Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Title, Domain, Starting_Date, About, Progress));
+                    Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Title, Domain, Starting_Date, About));
                 }
         } catch (Exception ex) {
             System.out.println("Failed to Load opportunities.");
@@ -189,7 +184,6 @@ public class OpenResearch {
                 Domain = rs.getString(4);
                 Starting_Date = rs.getDate(5);
                 About = rs.getString(6);
-                Progress = rs.getString(7);
                 stmt3 = con.createStatement();
                 ru = stmt3.executeQuery("SELECT * FROM `teachers`");
                 while (ru.next()) {
@@ -197,7 +191,7 @@ public class OpenResearch {
                         Teacher = ru.getString(3);
                     }
                 }
-                Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Students, Title, Domain, Starting_Date, About, Progress));
+                Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Students, Title, Domain, Starting_Date, About));
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
