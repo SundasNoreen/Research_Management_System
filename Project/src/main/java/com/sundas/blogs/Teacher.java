@@ -158,6 +158,45 @@ public class Teacher
         }
         return false;
     }
+    // By Aaiza Naeem
+    public boolean Change_Password(String Teacher_Id, String Password, String New) throws SQLException
+    {
+        this.Teacher_Id=Teacher_Id;
+        this.New=New;
+        this.Password=Password;
+        Connection con=null;
+        try{
+            String url ="jdbc:mysql://localhost/rms";
+            con =  DriverManager.getConnection(url, "root", "");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM teachers ");
+            while (rs.next())
+            {
+                String PWS = rs.getString(12);
+                if (PWS.equals(Password))
+                {
+                    PreparedStatement stmt2=con.prepareStatement("UPDATE `teachers` SET `Password`=? WHERE `Teacher_Id`=?");
+                    stmt2.setString(1,New);
+                    stmt2.setString(2,Teacher_Id);
+                    stmt2.executeUpdate();
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+        finally
+        {
+            con.close();
+        }
+        return false;
+    }
 
     ArrayList<Teacher> Teachers = new ArrayList<Teacher>();
 
