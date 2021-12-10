@@ -22,8 +22,6 @@ public class Application {
     public int Teacher_Id;
     public String Title;
     public static ResultSet rs, ru, rt, rv;
-    String url ="jdbc:mysql://localhost/rms";
-    public Connection con =  DriverManager.getConnection(url, "root", "");
     public void setApplication_Id(int application_Id) {
         Application_Id = application_Id;
     }
@@ -114,7 +112,9 @@ public class Application {
 
     // By SUNDAS NOREEN
     public ArrayList < Application > SetData(int Opportunity_Id, String Student_Id) throws SQLException, ClassNotFoundException {
- Class.forName("com.mysql.cj.jdbc.Driver");
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         stmt = con.createStatement();
         App.clear();
         this.Student_Id = Student_Id;
@@ -152,7 +152,9 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean Apply(int Opportunity_Id, String Student_Id, String CGPA, String Degree, String Field, String Reason, String Status, String Semester) throws SQLException {
- boolean flag = false;
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
+        boolean flag = false;
         this.Opportunity_Id = Opportunity_Id;
         this.CGPA = CGPA;
         this.Degree = Degree;
@@ -187,7 +189,9 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean Edit(int Application_Id, String Student_Id, String CGPA, String Degree, String Field, String Reason, String Status, String Semester) throws SQLException {
-  boolean flag = false;
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
+        boolean flag = false;
         this.Application_Id = Application_Id;
         this.CGPA = CGPA;
         this.Degree = Degree;
@@ -219,6 +223,8 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean Check(int Opportunity_Id, String Student_Id) throws SQLException {
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
         boolean flag = false;
         this.Opportunity_Id = Opportunity_Id;
         this.Student_Id = Student_Id;
@@ -242,7 +248,9 @@ public class Application {
 
     // By SUNDAS NOREEN
     public boolean CheckStatus(int Application_Id) throws SQLException {
-     boolean flag = false;
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
+        boolean flag = false;
         this.Application_Id = Application_Id;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -264,6 +272,8 @@ public class Application {
 
     // By SUNDAS NOREEN
     public ArrayList < Application > View_Applications(int id) throws SQLException {
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -294,6 +304,7 @@ public class Application {
                     rv = stmt4.executeQuery("SELECT * FROM `students` WHERE `Reg_No`='" + Student_Id + "'");
                     while (rv.next()) {
                         Name = rv.getString(2);
+                        Name = Student_Id+" ("+Name+")";
                     }
                 }
                 App.add(new Application(Application_Id, Title, Opportunity_Id, Teacher_Id, Teacher_Name, Submission, Student_Id, Name, CGPA, Degree, Field, Reason, Status, Semester));
@@ -309,10 +320,60 @@ public class Application {
 
     // By SUNDAS NOREEN
     public ArrayList < Application > View_Applications(String id) throws SQLException {
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
             rs = stmt.executeQuery("SELECT * FROM `application` WHERE `Student_Id`='" + id + "'");
+            App.clear();
+            while (rs.next()) {
+                Application_Id = rs.getInt(1);
+                Opportunity_Id = rs.getInt(2);
+                Student_Id = rs.getString(3);
+                CGPA = rs.getString(4);
+                Degree = rs.getString(5);
+                Field = rs.getString(6);
+                Reason = rs.getString(7);
+                Semester = rs.getString(8);
+                Status = rs.getString(9);
+                Submission = rs.getDate(10);
+                stmt2 = con.createStatement();
+                rt = stmt2.executeQuery("SELECT * FROM `research_opportunities` WHERE `Application_id`='" + Opportunity_Id + "'");
+                while (rt.next()) {
+                    Title = rt.getString(2);
+                    Teacher_Id = rt.getInt(3);
+                    stmt3 = con.createStatement();
+                    ru = stmt3.executeQuery("SELECT * FROM `teachers` WHERE `Teacher_Id`='" + Teacher_Id + "'");
+                    while (ru.next()) {
+                        Teacher_Name = ru.getString(3);
+                    }
+                    stmt4 = con.createStatement();
+                    rv = stmt4.executeQuery("SELECT * FROM `students` WHERE `Reg_No`='" + Student_Id + "'");
+                    while (rv.next()) {
+                        Name = rv.getString(2);
+                        Name=Student_Id+" ("+Name+")";
+                    }
+                }
+                App.add(new Application(Application_Id, Title, Opportunity_Id, Teacher_Id, Teacher_Name, Submission, Student_Id, Name, CGPA, Degree, Field, Reason, Status, Semester));
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            System.out.println("Failed to Load opportunities.");
+        } finally {
+            con.close();
+        }
+        return App;
+    }
+
+    public ArrayList < Application > View_Applications_Particular(int Opportunity_Id) throws SQLException {
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
+        this.Opportunity_Id=Opportunity_Id;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM `application` WHERE `Opportunity_Id`='" + Opportunity_Id + "'");
             App.clear();
             while (rs.next()) {
                 Application_Id = rs.getInt(1);
@@ -351,4 +412,79 @@ public class Application {
         }
         return App;
     }
+
+    public ArrayList < Application > View_Approved(int Opportunity_Id) throws SQLException {
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
+        this.Opportunity_Id=Opportunity_Id;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            stmt = con.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM `application` WHERE `Opportunity_Id`='" + Opportunity_Id + "'");
+            App.clear();
+            while (rs.next()) {
+                Application_Id = rs.getInt(1);
+                Opportunity_Id = rs.getInt(2);
+                Student_Id = rs.getString(3);
+                CGPA = rs.getString(4);
+                Degree = rs.getString(5);
+                Field = rs.getString(6);
+                Reason = rs.getString(7);
+                Semester = rs.getString(8);
+                Status = rs.getString(9);
+                Submission = rs.getDate(10);
+                stmt2 = con.createStatement();
+                if (Status.equals("Approved"))
+                {
+                rt = stmt2.executeQuery("SELECT * FROM `research_opportunities` WHERE `Application_id`='" + Opportunity_Id + "'");
+                while (rt.next()) {
+                    Title = rt.getString(2);
+                    Teacher_Id = rt.getInt(3);
+                    stmt3 = con.createStatement();
+                    ru = stmt3.executeQuery("SELECT * FROM `teachers` WHERE `Teacher_Id`='" + Teacher_Id + "'");
+                    while (ru.next()) {
+                        Teacher_Name = ru.getString(3);
+                    }
+                    stmt4 = con.createStatement();
+                    rv = stmt4.executeQuery("SELECT * FROM `students` WHERE `Reg_No`='" + Student_Id + "'");
+                    while (rv.next()) {
+                        Name = rv.getString(2);
+                    }
+                }
+                App.add(new Application(Application_Id, Title, Opportunity_Id, Teacher_Id, Teacher_Name, Submission, Student_Id, Name, CGPA, Degree, Field, Reason, Status, Semester));
+            }}
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            System.out.println("Failed to Load opportunities.");
+        } finally {
+            con.close();
+        }
+        return App;
+    }
+
+    public boolean Approve_Reject(int Application_id,String Status) throws SQLException, ClassNotFoundException {
+        String url ="jdbc:mysql://localhost/rms";
+        Connection con =  DriverManager.getConnection(url, "root", "");
+        boolean flag = false;
+        this.Status=Status;
+        this.Application_Id=Application_id;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String query = "UPDATE `application` SET `Status`=? WHERE `Application_Id`=?";
+            PreparedStatement st = con.prepareStatement(query);
+            st.setString(1, Status);
+            st.setInt(2, Application_id);
+            st.executeUpdate();
+            flag = true;
+            }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+
+    }  finally {
+            con.close();
+        }
+        return flag;
+    }
+
+
 }

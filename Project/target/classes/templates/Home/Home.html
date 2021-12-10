@@ -17,13 +17,12 @@
 <style>.table-responsive td{text-align: center; border: none; color:rosybrown; font-size: 20px;font-weight: bold;}</style>
 <body>
 <nav class="navbar navbar-light navbar-expand-md navigation-clean">
-    <div class="container"><a style="text-transform: uppercase; color: teal" class="navbar-brand" href="#">Research Management System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="container"><a style="text-transform: uppercase; color: #130c36" class="navbar-brand" href="#">Research Management System</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" th:href="@{/}"><strong>Home</strong></a></li>
                 <li class="nav-item"><a class="nav-link" th:href="@{/Research_Management_System_Overview}"><strong>Overview</strong></a></li>
-                <li class="nav-item"><a class="nav-link" th:href="@{/Research_Management_System_Help}"><strong>RMS Help</strong></a></li>
-                <li class="nav-item"><a class="nav-link" href="https://ce.uet.edu.pk"><strong>Department</strong></a></li>
+                <li class="nav-item"><a class="nav-link" target="blank" href="https://ce.uet.edu.pk"><strong>Department</strong></a></li>
                 <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><strong>SignIn</strong></a>
                     <div class="dropdown-menu"><a class="dropdown-item" th:href="@{/Administrator_Login}">Administrator</a><a class="dropdown-item" th:href="@{/Teacher_Login}">Teacher</a><a class="dropdown-item" th:href="@{/Student_Login}">Student</a></div>
                 </li>
@@ -103,12 +102,12 @@
             <table class="table">
                 <tbody>
                 <tr>
-                    <td>500 Students</td>
-                    <td>100 Teachers</td>
+                    <td th:text="${s}+ ' Students '  ">500 Students</td>
+                    <td th:text="${t}+ ' Teachers '  ">100 Teachers</td>
                 </tr>
                 <tr>
-                    <td>230 Complete Researches</td>
-                    <td>50 Ongoing Researches</td>
+                    <td th:text="${c}+ ' Complete Researches '  ">230 Complete Researches</td>
+                    <td th:text="${o}+ ' Ongoing Researches '  ">50 Ongoing Researches</td>
                 </tr>
                 </tbody>
             </table>
@@ -135,7 +134,6 @@
     <ul class="list-inline">
         <li class="list-inline-item"><a th:href="@{/Research_Management_System_Overview}">Overview</a></li>
         <li class="list-inline-item"><a href="https://drive.google.com/file/d/1K5l0_t171xv81UPlJmHTeleDDvh5m78s/view?usp=sharing" target="blank">Student Guide</a></li>
-        <li class="list-inline-item"><a th:href="@{/Research_Management_System_Privacy_Policy}">Privacy Policy</a></li>
         <li class="list-inline-item"><a th:href="@{/Research_Management_System_Acknowledgements}">Acknowledgements</a></li>
     </ul>
     <p class="copyright">Copyright 2021 © University of Engineering and Technology, Lahore.</p>

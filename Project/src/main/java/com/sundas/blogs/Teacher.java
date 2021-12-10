@@ -4,7 +4,6 @@ import java.sql.*;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.EnumMap;
 
 public class Teacher
 {
@@ -23,6 +22,7 @@ public class Teacher
     private String Password;
     private String gender;
     private String extra;
+    private String New;
     String url ="jdbc:mysql://localhost/rms";
     public Connection con =  DriverManager.getConnection(url, "root", "");Statement stmt;
     ResultSet rs;
@@ -78,6 +78,7 @@ public class Teacher
     public void setCNIC(String CNIC) {
         this.CNIC = CNIC;
     }
+    public void setNew(String New){this.New=New;}
     public String getPassword() {
         return Password;
     }
@@ -90,6 +91,7 @@ public class Teacher
     public String getEmail() {
         return Email;
     }
+    public String getNew(){return New;}
     public Date getDOB() {
         return DOB;
     }
@@ -140,50 +142,14 @@ public class Teacher
             rs = stmt.executeQuery("SELECT * FROM teachers ");
             while (rs.next())
             {
-                String email = rs.getString(10);
+                String email = rs.getString(11);
                 String PWS = rs.getString(12);
                 if (email.equals(Email) && PWS.equals(Password))
                 {
+                    gender=rs.getString(13);
+                    Name=rs.getString(3);
+                    Teacher_Id=rs.getInt(1);
                     return true;
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            return false;
-        }
-        finally
-        {
-            con.close();
-        }
-        return false;
-    }
-    // By Aaiza Naeem
-    public boolean Change_Password(String Teacher_Id, String Password, String New) throws SQLException
-    {
-        this.Teacher_Id=Teacher_Id;
-        this.New=New;
-        this.Password=Password;
-        Connection con=null;
-        try{
-            String url ="jdbc:mysql://localhost/rms";
-            con =  DriverManager.getConnection(url, "root", "");
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM teachers ");
-            while (rs.next())
-            {
-                String PWS = rs.getString(12);
-                if (PWS.equals(Password))
-                {
-                    PreparedStatement stmt2=con.prepareStatement("UPDATE `teachers` SET `Password`=? WHERE `Teacher_Id`=?");
-                    stmt2.setString(1,New);
-                    stmt2.setString(2,Teacher_Id);
-                    stmt2.executeUpdate();
-                    return true;
-                }
-                else{
-                    return false;
                 }
             }
         }
@@ -366,6 +332,80 @@ public class Teacher
             con.close();
         }
         return flag;
+    }
+
+    public ArrayList<Teacher> GetData(int Teacher_Id) throws SQLException
+    {
+        this.Teacher_Id=Teacher_Id;
+        Teachers.clear();
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM `teachers` WHERE `Teacher_Id`='"+Teacher_Id+"'");
+            while (rs.next())
+            {
+                Department=rs.getString(2);
+                Name=rs.getString(3);
+                FatherName=rs.getString(4);
+                CNIC=rs.getString(5);
+                DOB=rs.getDate(6);
+                Weight_Qual=rs.getString(7);
+                Majors=rs.getString(8);
+                ContactNumber=rs.getString(9);
+                Email=rs.getString(10);
+                gender=rs.getString(13);
+                LoginId=rs.getString(11);
+                Password=rs.getString(12);
+                Teachers.add(new Teacher(Teacher_Id,Name,Department,FatherName,CNIC,DOB,Weight_Qual,Majors,ContactNumber,Email,gender,LoginId,Password));
+            }
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+        finally
+        {
+            con.close();
+        }
+        return Teachers;
+    }
+
+    public boolean Change_Password(int Teacher_Id, String Password, String New) throws SQLException
+    {
+        this.Teacher_Id=Teacher_Id;
+        this.New=New;
+        this.Password=Password;
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM teachers WHERE `Teacher_Id`='"+Teacher_Id+"'");
+            while (rs.next())
+            {
+                String PWS = rs.getString(12);
+                if (PWS.equals(Password))
+                {
+                    PreparedStatement stmt2=con.prepareStatement("UPDATE `teachers` SET `Password`=? WHERE `Teacher_Id`=?");
+                    stmt2.setString(1,New);
+                    stmt2.setInt(2,Teacher_Id);
+                    stmt2.executeUpdate();
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+        finally
+        {
+            con.close();
+        }
+        return false;
     }
 
 }

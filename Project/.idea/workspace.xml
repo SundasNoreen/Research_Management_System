@@ -10,13 +10,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,19 +61,6 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RunManager" selected="Application.BlogsApplication">
-    <configuration name="Admin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.Admin" />
-      <module name="blogs" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sundas.blogs.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.Application" />
       <module name="blogs" />
@@ -98,8 +88,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClosedResearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.ClosedResearch" />
+    <configuration name="OpenResearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.OpenResearch" />
       <module name="blogs" />
       <extension name="coverage">
         <pattern>
@@ -113,6 +103,19 @@
     </configuration>
     <configuration name="Research_Opportunities" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.Research_Opportunities" />
+      <module name="blogs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sundas.blogs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringEmailDemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sundas.blogs.SpringEmailDemoApplication" />
       <module name="blogs" />
       <extension name="coverage">
         <pattern>
@@ -147,19 +150,19 @@
     <list>
       <item itemvalue="Application.BlogsApplication" />
       <item itemvalue="Application.Application" />
-      <item itemvalue="Application.ClosedResearch" />
-      <item itemvalue="Application.Research_Opportunities" />
-      <item itemvalue="Application.Admin" />
       <item itemvalue="Application.Teacher" />
       <item itemvalue="Application.CSVConsume" />
+      <item itemvalue="Application.SpringEmailDemoApplication" />
+      <item itemvalue="Application.Research_Opportunities" />
+      <item itemvalue="Application.OpenResearch" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OpenResearch" />
+        <item itemvalue="Application.Research_Opportunities" />
+        <item itemvalue="Application.SpringEmailDemoApplication" />
         <item itemvalue="Application.CSVConsume" />
         <item itemvalue="Application.Teacher" />
-        <item itemvalue="Application.ClosedResearch" />
-        <item itemvalue="Application.Admin" />
-        <item itemvalue="Application.Research_Opportunities" />
       </list>
     </recent_temporary>
   </component>
@@ -204,10 +207,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="15" y="11" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636289095120">
+    <state x="15" y="11" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1638716251156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="15" y="11" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1636289095120" />
+    <state x="15" y="11" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1638716251156" />
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1638206983031">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -216,54 +219,62 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="290" y="158" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1636289087447" />
-    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1638159813370">
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1638714499793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1638159813370" />
-    <state width="1322" height="432" key="GridCell.Tab.0.bottom" timestamp="1638707295676">
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1638714499793" />
+    <state width="1322" height="383" key="GridCell.Tab.0.bottom" timestamp="1639166819429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="432" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
-    <state width="1322" height="432" key="GridCell.Tab.0.center" timestamp="1638707295676">
+    <state width="1322" height="383" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
+    <state width="1322" height="383" key="GridCell.Tab.0.center" timestamp="1639166819429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="432" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
-    <state width="1322" height="432" key="GridCell.Tab.0.left" timestamp="1638707295676">
+    <state width="1322" height="383" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
+    <state width="1322" height="383" key="GridCell.Tab.0.left" timestamp="1639166819429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="432" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
-    <state width="1322" height="432" key="GridCell.Tab.0.right" timestamp="1638707295676">
+    <state width="1322" height="383" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
+    <state width="1322" height="383" key="GridCell.Tab.0.right" timestamp="1639166819429">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="432" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1638707295676" />
-    <state width="1322" height="426" key="GridCell.Tab.1.bottom" timestamp="1638698966862">
+    <state width="1322" height="383" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
+    <state width="1322" height="426" key="GridCell.Tab.1.bottom" timestamp="1638802141561">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
-    <state width="1322" height="426" key="GridCell.Tab.1.center" timestamp="1638698966862">
+    <state width="1322" height="426" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
+    <state width="1322" height="426" key="GridCell.Tab.1.center" timestamp="1638802141561">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
-    <state width="1322" height="426" key="GridCell.Tab.1.left" timestamp="1638698966862">
+    <state width="1322" height="426" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
+    <state width="1322" height="426" key="GridCell.Tab.1.left" timestamp="1638802141561">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
-    <state width="1322" height="426" key="GridCell.Tab.1.right" timestamp="1638698966862">
+    <state width="1322" height="426" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
+    <state width="1322" height="426" key="GridCell.Tab.1.right" timestamp="1638802141561">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1638698966862" />
+    <state width="1322" height="426" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
+    <state x="213" y="17" key="Maven.ArtifactSearchDialog" timestamp="1638717018141">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="17" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1638717018141" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1636823583976">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1636823583976" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1639166302678">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1639166302678" />
     <state x="266" y="0" width="964" height="703" key="dock-window-1" timestamp="1636645275657">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="266" y="0" width="964" height="703" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1636645275657" />
-    <state x="339" y="157" key="run.anything.popup" timestamp="1636276128919">
+    <state x="339" y="157" key="run.anything.popup" timestamp="1639158528718">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1636276128919" />
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1639158528718" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1637319165804">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -274,8 +285,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/ClosedResearch.java</url>
-          <line>32</line>
+          <line>133</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/StudentController.java</url>
+          <line>428</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/TeacherController.java</url>
+          <line>348</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/Research_Tracker.java</url>

@@ -12,15 +12,86 @@ public class OpenResearch {
     public String Domain;
     public Date Starting_Date;
     public String About;
-    String url ="jdbc:mysql://localhost/rms";
-    public Connection con =  DriverManager.getConnection(url, "root", "");
+    public String Temp;
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public int getTeacher_id() {
+        return Teacher_id;
+    }
+
+    public String getDomain() {
+        return Domain;
+    }
+
+    public Date getStarting_Date() {
+        return Starting_Date;
+    }
+
+    public int getResearch_Id() {
+        return Research_Id;
+    }
+
+    public String getAbout() {
+        return About;
+    }
+
+    public String getTemp() {
+        return Temp;
+    }
+
+    public String getStudents() {
+        return Students;
+    }
+
+    public String getTeacher() {
+        return Teacher;
+    }
+
+    public void setTeacher_id(int teacher_id) {
+        Teacher_id = teacher_id;
+    }
+
+    public void setResearch_Id(int research_Id) {
+        Research_Id = research_Id;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public void setStarting_Date(Date starting_Date) {
+        Starting_Date = starting_Date;
+    }
+
+    public void setTeacher(String teacher) {
+        Teacher = teacher;
+    }
+
+    public void setDomain(String domain) {
+        Domain = domain;
+    }
+
+    public void setAbout(String about) {
+        About = about;
+    }
+
+    public void setTemp(String temp) {
+        Temp = temp;
+    }
+
+    String url = "jdbc:mysql://localhost/rms";
+    public Connection con = DriverManager.getConnection(url, "root", "");
     public String Students = "";
-    Statement stmt1, stmt2, stmt3;
+    Statement stmt1, stmt2, stmt3, stmt4, stmt5;
     ResultSet rs, rt, ru;
     public String Teacher;
-    private ArrayList < OpenResearch > Open = new ArrayList < OpenResearch > ();
+    private ArrayList<OpenResearch> Open = new ArrayList<OpenResearch>();
 
-    OpenResearch() throws SQLException {}
+    OpenResearch() throws SQLException {
+    }
 
     OpenResearch(int Research_Id, String Teacher, int Teacher_id, String Title, String Domain, Date Starting_Date, String About) throws SQLException {
         this.Research_Id = Research_Id;
@@ -44,11 +115,11 @@ public class OpenResearch {
     }
 
     // By SUNDAS NOREEN
-    public ArrayList < OpenResearch > Student_List(String Reg_No) throws SQLException {
+    public ArrayList<OpenResearch> Student_List(String Reg_No) throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Open.clear();
-            stmt1= con.createStatement();
+            stmt1 = con.createStatement();
             String query = "SELECT * FROM `student_research_open` WHERE  `Student_Id`='" + Reg_No + "'";
             rt = stmt1.executeQuery(query);
             while (rt.next()) {
@@ -82,7 +153,7 @@ public class OpenResearch {
     }
 
     // By SUNDAS NOREEN
-    public ArrayList < OpenResearch > Student_Individual(int Research_Id) throws SQLException {
+    public ArrayList<OpenResearch> Student_Individual(int Research_Id) throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt1 = con.createStatement();
@@ -127,28 +198,28 @@ public class OpenResearch {
     }
 
     // By HIRA ASLAM
-    public ArrayList < OpenResearch > Admin_List() throws SQLException {
+    public ArrayList<OpenResearch> Admin_List() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Open.clear();
-            stmt2=con.createStatement();
-                rs = stmt2.executeQuery("SELECT * FROM `open_research`");
-                while (rs.next()) {
-                    Research_Id = rs.getInt(1);
-                    Title = rs.getString(2);
-                    Teacher_id = rs.getInt(3);
-                    Domain = rs.getString(4);
-                    Starting_Date = rs.getDate(5);
-                    About = rs.getString(6);
-                    stmt3 = con.createStatement();
-                    ru = stmt3.executeQuery("SELECT * FROM `teachers`");
-                    while (ru.next()) {
-                        if (ru.getInt(1) == Teacher_id) {
-                            Teacher = ru.getString(3);
-                        }
+            stmt2 = con.createStatement();
+            rs = stmt2.executeQuery("SELECT * FROM `open_research`");
+            while (rs.next()) {
+                Research_Id = rs.getInt(1);
+                Title = rs.getString(2);
+                Teacher_id = rs.getInt(3);
+                Domain = rs.getString(4);
+                Starting_Date = rs.getDate(5);
+                About = rs.getString(6);
+                stmt3 = con.createStatement();
+                ru = stmt3.executeQuery("SELECT * FROM `teachers`");
+                while (ru.next()) {
+                    if (ru.getInt(1) == Teacher_id) {
+                        Teacher = ru.getString(3);
                     }
-                    Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Title, Domain, Starting_Date, About));
                 }
+                Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Title, Domain, Starting_Date, About));
+            }
         } catch (Exception ex) {
             System.out.println("Failed to Load opportunities.");
         } finally {
@@ -158,7 +229,7 @@ public class OpenResearch {
     }
 
     // By HIRA ASLAM
-    public ArrayList < OpenResearch > Admin_Individual(int Research_Id) throws SQLException {
+    public ArrayList<OpenResearch> Admin_Individual(int Research_Id) throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt1 = con.createStatement();
@@ -201,4 +272,163 @@ public class OpenResearch {
         }
         return Open;
     }
+
+    public ArrayList<OpenResearch> Teacher_List(int Teacher_Id) throws SQLException {
+        this.Teacher_id = Teacher_Id;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Open.clear();
+            stmt2 = con.createStatement();
+            rs = stmt2.executeQuery("SELECT * FROM `open_research` WHERE  `Teacher_Id`='" + Teacher_id + "'");
+            while (rs.next()) {
+                Research_Id = rs.getInt(1);
+                Title = rs.getString(2);
+                Teacher_id = rs.getInt(3);
+                Domain = rs.getString(4);
+                Starting_Date = rs.getDate(5);
+                About = rs.getString(6);
+                stmt3 = con.createStatement();
+                ru = stmt3.executeQuery("SELECT * FROM `teachers`");
+                while (ru.next()) {
+                    if (ru.getInt(1) == Teacher_id) {
+                        Teacher = ru.getString(3);
+                    }
+                }
+                Open.add(new OpenResearch(Research_Id, Teacher, Teacher_id, Title, Domain, Starting_Date, About));
+            }
+        } catch (Exception ex) {
+            System.out.println("Failed to Load opportunities.");
+        } finally {
+            con.close();
+        }
+        return Open;
+    }
+
+    public boolean Mark_Closed(int id, String Status, String Ending, String Report, String Abstract, String Conclusion) throws SQLException {
+        this.Research_Id = id;
+        boolean flag = false;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            stmt2 = con.createStatement();
+            rs = stmt2.executeQuery("SELECT * FROM `open_research` WHERE  `Research_Id`='" + Research_Id + "'");
+            while (rs.next()) {
+                Research_Id = rs.getInt(1);
+                Title = rs.getString(2);
+                Teacher_id = rs.getInt(3);
+                Domain = rs.getString(4);
+                Starting_Date = rs.getDate(5);
+                About = rs.getString(6);
+                System.out.println("Data Fetched");
+            }
+            java.sql.Date date2 = java.sql.Date.valueOf(Ending);
+            System.out.println(date2);
+            String query = "INSERT INTO `closed_research`(`Status`, `Title`, `Teacher_Id`, `Domain`, `Starting_Date`, `Ending_Date`,`Abstract`, `Conclusion`, `Link`,`Research_Id`) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            PreparedStatement st = con.prepareStatement(query);
+            st.setString(1, Status);
+            st.setString(2, Title);
+            st.setInt(3, Teacher_id);
+            st.setString(4, Domain);
+            st.setDate(5, (java.sql.Date) Starting_Date);
+            st.setDate(6, date2);
+            st.setString(7, Abstract);
+            st.setString(8, Conclusion);
+            st.setString(9, Report);
+            st.setInt(10, Research_Id);
+            st.executeUpdate();
+            System.out.println("Inserted");
+            String query1 = "DELETE FROM `open_research` WHERE  `Teacher_Id`='" + Teacher_id + "'";
+            stmt3 = con.createStatement();
+            stmt3.executeUpdate(query1);
+            System.out.println("Data Deleted");
+            stmt4 = con.createStatement();
+            rt = stmt2.executeQuery("SELECT * FROM `student_research_open` WHERE  `Research_Id`='" + Research_Id + "'");
+            while (rt.next()) {
+                String query2 = "INSERT INTO `student_research_closed`(`Student_Id`, `Research_Id`) VALUES (?,?)";
+                PreparedStatement st2 = con.prepareStatement(query2);
+                String name = rt.getString(1);
+                st2.setString(1, name);
+                st2.setInt(2, Research_Id);
+                System.out.println("Data Inserted");
+                st2.executeUpdate();
+                flag = true;
+            }
+            String query3 = "DELETE FROM `student_research_open` WHERE  `Research_Id`='" + Research_Id + "'";
+            stmt5 = con.createStatement();
+            stmt5.executeUpdate(query3);
+            System.out.println("Data Deleted");
+        } catch (Exception ex) {
+            flag = false;
+            System.out.println(ex.getMessage());
+        } finally {
+            con.close();
+        }
+        return flag;
+    }
+
+    public boolean Add_Research(String Title,int Teacher_Id,String Domain,String Starting_Date, String About) throws SQLException {
+        boolean flag=false;
+        try{
+        String query2 = "INSERT INTO `open_research`(`Title`, `Teacher_Id`, `Domain`, `Starting_Date`, `About`) VALUES (?,?,?,?,?)";
+        PreparedStatement st2 = con.prepareStatement(query2);
+        st2.setString(1, Title);
+        st2.setInt(2, Teacher_Id);
+        st2.setString(3, Domain);
+        java.sql.Date date2 = java.sql.Date.valueOf(Starting_Date);
+        st2.setDate(4, date2);
+        st2.setString(5, About);
+        System.out.println("Data Inserted");
+        st2.executeUpdate();
+        flag = true;}
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            con.close();
+        }
+        return flag;
+    }
+
+    public boolean Edit_Research(int Research_Id,String Domain,String Starting_Date, String About) throws SQLException {
+        boolean flag=false;
+        try{
+            String query2 = "UPDATE `open_research` SET `Domain`=?,`Starting_Date`=?,`About`=? WHERE  `Research_Id`='" + Research_Id + "'";
+            PreparedStatement st2 = con.prepareStatement(query2);
+            st2.setString(1, Domain);
+            java.sql.Date date2 = java.sql.Date.valueOf(Starting_Date);
+            st2.setDate(2, date2);
+            st2.setString(3, About);
+            System.out.println("Data Updated");
+            st2.executeUpdate();
+            flag = true;}
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            con.close();
+        }
+        return flag;
+    }
+
+    public boolean Edit_Research(int Research_Id,String Domain, String About) throws SQLException {
+        boolean flag=false;
+        try{
+            String query2 = "UPDATE `open_research` SET `Domain`=?,`About`=? WHERE  `Research_Id`='" + Research_Id + "'";
+            PreparedStatement st2 = con.prepareStatement(query2);
+            st2.setString(1, Domain);
+            st2.setString(2, About);
+            System.out.println("Data Updated");
+            st2.executeUpdate();
+            flag = true;}
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            con.close();
+        }
+        return flag;
+    }
+
 }

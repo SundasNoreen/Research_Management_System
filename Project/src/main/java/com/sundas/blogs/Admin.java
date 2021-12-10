@@ -18,7 +18,8 @@ public class Admin
     private String CNIC;
     private String New;
     String url ="jdbc:mysql://localhost/rms";
-    public Connection con =  DriverManager.getConnection(url, "root", "");public void setName(String Name) {this.Name=Name;}
+    public Connection con =  DriverManager.getConnection(url, "root", "");
+    public void setName(String Name) {this.Name=Name;}
     public void setCNIC(String CNIC) {
         this.CNIC = CNIC;
     }

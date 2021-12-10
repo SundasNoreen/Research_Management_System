@@ -29,7 +29,7 @@
 </head>
 <body id="page-top">
 <div id="wrapper">
-    <nav style="background:teal" class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+    <nav style="background:#130c36" class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"></div>
@@ -51,7 +51,7 @@
         <div id="content">
             <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                 <div class="container-fluid">
-                    <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" style="color:teal;" type="button"><i class="fas fa-bars"></i></button>
+                    <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" style="color:#130c36;" type="button"><i class="fas fa-bars"></i></button>
                     <ul  class="navbar-nav flex-nowrap ms-auto">
                         <div class="d-none d-sm-block topbar-divider"></div>
                         <li class="nav-item dropdown no-arrow">
@@ -72,8 +72,8 @@
                 <div class="card shadow" style="margin-bottom:20px;">
                     <div class="card-body">
                         <div class="row">
-                            <a th:href="@{/Add_Student_Ind}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:teal; text-align:center; text-decoration:none;text-transform:uppercase">Add Students</a>
-                            <a th:href="@{/Add_Students_csv}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:teal; text-align:center; text-decoration:none;text-transform:uppercase">Add Students from CSV</a>
+                            <a th:href="@{/Add_Student_Ind}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:#130c36; text-align:center; text-decoration:none;text-transform:uppercase">Add Students</a>
+                            <a th:href="@{/Add_Students_csv}" style="font-size:16px; font-weight:bold; margin-bottom: 15px; color:#130c36; text-align:center; text-decoration:none;text-transform:uppercase">Add Students from CSV</a>
                         </div>
                         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                             <table id="myTable" class="table my-0">
@@ -91,11 +91,11 @@
                                 <tr th:each="b: ${b}">
                                     <td th:text="${b.ClassName}">Teacher</td>
                                     <td th:text="${b.Reg_No}">Tokyo</td>
-                                    <td><a style="color:teal; text-decoration:none;" th:href="@{/Student_Details_{id}(id = ${b.Reg_No})}" th:text="${b.Name}">Title</a></td>
+                                    <td><a style="color:#130c36; text-decoration:none;" th:href="@{/Student_Details_{id}(id = ${b.Reg_No})}" th:text="${b.Name}">Title</a></td>
                                     <td th:text="${b.FatherName}">Tokyo</td>
                                     <td th:text="${b.Degree}">Tokyo</td>
-                                    <td><a style="color:teal;" th:href="@{/Edit_Student_{id}(id = ${b.Reg_No})}" th:text="Edit">Edit</a>
-                                        <a style="color:teal;" th:href="@{/Delete_Student_{id}(id = ${b.Reg_No})}" th:text="Delete">Delete</a>
+                                    <td><a style="color:#130c36;" th:href="@{/Edit_Student_{id}(id = ${b.Reg_No})}" th:text="Edit">Edit</a>
+                                        <a style="color:#130c36;" th:href="@{/Delete_Student_{id}(id = ${b.Reg_No})}" th:text="Delete">Delete</a>
                                     </td>
                                 </tbody>
                             </table>
@@ -106,7 +106,7 @@
         </div>
     </div>
 </div>
-<a class="border rounded d-inline scroll-to-top" style="color:white; background:teal" href="#page-top"><i class="fas fa-angle-up"></i></a>
+<a class="border rounded d-inline scroll-to-top" style="color:white; background:#130c36" href="#page-top"><i class="fas fa-angle-up"></i></a>
 <script>
          $(document).ready(function() {
              $('#myTable').DataTable( {

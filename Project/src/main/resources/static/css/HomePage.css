@@ -12,7 +12,7 @@ body{
     font-weight: bold;
     margin-bottom: 40px;
     padding-top: 40px;
-    color: teal;
+    color: #130c36;
 }
 
 @media (max-width:767px) {
@@ -67,7 +67,7 @@ body{
     font-weight: bold;
     margin-bottom: 40px;
     padding-top: 40px;
-    color: teal;
+    color: #130c36;
 }
 
 @media (max-width:767px) {
@@ -263,7 +263,7 @@ color: rosybrown;
 
 .highlight-phone .intro .btn-primary {
     background-color: rosybrown;
-    color: teal;
+    color: #130c36;
 }
 
 .highlight-phone .phone-mockup {

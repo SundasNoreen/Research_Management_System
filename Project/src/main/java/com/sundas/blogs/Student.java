@@ -226,7 +226,7 @@ public class Student
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM students ");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM students  WHERE `Reg_No`='"+Reg_No+"'");
             while (rs.next())
             {
                 String PWS = rs.getString(12);

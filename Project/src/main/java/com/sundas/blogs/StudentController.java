@@ -4,9 +4,9 @@ package com.sundas.blogs;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
+
+import java.sql.*;
 import java.util.ArrayList;
-import java.sql.Date;
-import java.sql.SQLException;
 
 @Controller
 public class StudentController
@@ -708,6 +708,44 @@ public class StudentController
             String Message = "You Need to Login First.";
             model.addAttribute("Message", Message);
             Page = "Login/Student.html";
+        }
+        return Data.Connection(Page,Error_Page);
+    }
+
+    @RequestMapping("/Delete_Research_Paper_Review_{id}")
+    public String Delete_Research_Paper_Review(Model model, @PathVariable("id") int id) throws SQLException, ClassNotFoundException {
+        if (logged_in) {
+            model.addAttribute("Name", Student_Name);
+            if (Gender.equals("Male")) {
+                model.addAttribute("Picture", "/img/Student_Male.png");
+            } else if (Gender.equals("Female")) {
+                model.addAttribute("Picture", "/img/Student_Female.png");
+            }
+            String url = "jdbc:mysql://localhost/rms";
+            Connection con = DriverManager.getConnection(url, "root", "");
+            Statement stmt;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            stmt = con.createStatement();
+            boolean tag = false;
+            try {
+                String query = "DELETE FROM `research_tracker` WHERE  `Paper_Id`= '" + id + "'";
+                stmt.executeUpdate(query);
+                tag=true;
+            } catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+            finally {
+                con.close();
+            }
+            if(tag)
+            {Page="Student/Success.html";}
+            else
+            {Page="Student/Failure.html";}}
+        else
+        {
+            String Message = "You Need to Login First.";
+            model.addAttribute("Message", Message);
+            Page = "Login/Teacher.html";
         }
         return Data.Connection(Page,Error_Page);
     }
