@@ -58,7 +58,7 @@
     <property name="last_opened_file_path" value="C:/Admin (1).java" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.BlogsApplication">
     <configuration name="Application" type="Application" factoryName="Application">
@@ -147,6 +147,138 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Azure Web App: blogs:blogs" type="com.microsoft.intellij.run.configuration.WebAppConfigurationType" factoryName="Azure Web App">
+      <option name="OS" value="linux" />
+      <option name="appServicePlanId" value="/subscriptions/79f9e758-8321-46b7-afb9-6720fa8fc053/resourceGroups/rg-app-blogs-211211024053/providers/Microsoft.Web/serverfarms/rms" />
+      <option name="appServicePlanName" value="" />
+      <option name="applicationLogLevel" value="Error" />
+      <option name="artifactIdentifier" value="com.sundas:blogs:0.0.1-SNAPSHOT" />
+      <option name="azureArtifactType" value="Maven" />
+      <option name="creatingAppServicePlan" value="false" />
+      <option name="creatingNew" value="false" />
+      <option name="creatingResGrp" value="true" />
+      <option name="deployToRoot" value="false" />
+      <option name="deployToSlot" value="false" />
+      <option name="enableApplicationLog" value="false" />
+      <option name="enableDetailedErrorMessage" value="false" />
+      <option name="enableFailedRequestTracing" value="false" />
+      <option name="enableWebServerLogging" value="true" />
+      <option name="jdkVersion">
+        <JavaVersion />
+      </option>
+      <option name="newSlotConfigurationSource" />
+      <option name="newSlotName" />
+      <option name="openBrowserAfterDeployment" value="true" />
+      <option name="packaging" value="jar" />
+      <option name="pricing" value="Free_F1" />
+      <option name="projectBase" value="" />
+      <option name="projectType" value="" />
+      <option name="region" value="westus" />
+      <option name="resourceGroup" value="" />
+      <option name="slotName" />
+      <option name="slotPanelVisible" value="false" />
+      <option name="stack" value="JAVA" />
+      <option name="subscriptionId" value="79f9e758-8321-46b7-afb9-6720fa8fc053" />
+      <option name="targetName" value="blogs-0.0.1-SNAPSHOT.jar" />
+      <option name="targetPath" value="" />
+      <option name="version" value="8-jre8" />
+      <option name="webAppId" value="/subscriptions/79f9e758-8321-46b7-afb9-6720fa8fc053/resourceGroups/rg-app-blogs-211211134533/providers/Microsoft.Web/sites/researchrms" />
+      <option name="webAppName" value="" />
+      <option name="webContainer" value="" />
+      <option name="webServerLogQuota" value="35" />
+      <option name="webServerRetentionPeriod" value="0" />
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+      </method>
+    </configuration>
+    <configuration name="RMS" type="com.microsoft.intellij.run.configuration.WebAppConfigurationType" factoryName="Azure Web App">
+      <option name="OS" value="windows" />
+      <option name="appServicePlanId" value="" />
+      <option name="appServicePlanName" value="sp-app-blogs-211211022623" />
+      <option name="applicationLogLevel" value="Error" />
+      <option name="artifactIdentifier" value="com.sundas:blogs:0.0.1-SNAPSHOT" />
+      <option name="azureArtifactType" value="Maven" />
+      <option name="creatingAppServicePlan" value="true" />
+      <option name="creatingNew" value="true" />
+      <option name="creatingResGrp" value="true" />
+      <option name="deployToRoot" value="false" />
+      <option name="deployToSlot" value="false" />
+      <option name="enableApplicationLog" value="true" />
+      <option name="enableDetailedErrorMessage" value="false" />
+      <option name="enableFailedRequestTracing" value="false" />
+      <option name="enableWebServerLogging" value="true" />
+      <option name="jdkVersion">
+        <JavaVersion />
+      </option>
+      <option name="newSlotConfigurationSource" />
+      <option name="newSlotName" />
+      <option name="openBrowserAfterDeployment" value="true" />
+      <option name="packaging" value="jar" />
+      <option name="pricing" value="Basic_B2" />
+      <option name="projectBase" value="" />
+      <option name="projectType" value="" />
+      <option name="region" value="westus" />
+      <option name="resourceGroup" value="rg-app-blogs-211211022623" />
+      <option name="slotName" />
+      <option name="slotPanelVisible" value="false" />
+      <option name="stack" value="TOMCAT" />
+      <option name="subscriptionId" value="79f9e758-8321-46b7-afb9-6720fa8fc053" />
+      <option name="targetName" value="" />
+      <option name="targetPath" value="" />
+      <option name="version" value="8.5-jre8" />
+      <option name="webAppId" value="" />
+      <option name="webAppName" value="rms2021" />
+      <option name="webContainer" value="java 8" />
+      <option name="webServerLogQuota" value="35" />
+      <option name="webServerRetentionPeriod" value="0" />
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+      </method>
+    </configuration>
+    <configuration name="rms" type="com.microsoft.intellij.run.configuration.WebAppConfigurationType" factoryName="Azure Web App" singleton="false">
+      <option name="OS" value="linux" />
+      <option name="appServicePlanId" value="" />
+      <option name="appServicePlanName" value="RMS" />
+      <option name="applicationLogLevel" value="Error" />
+      <option name="artifactIdentifier" value="com.sundas:blogs:0.0.1-SNAPSHOT" />
+      <option name="azureArtifactType" value="Maven" />
+      <option name="creatingAppServicePlan" value="true" />
+      <option name="creatingNew" value="true" />
+      <option name="creatingResGrp" value="true" />
+      <option name="deployToRoot" value="false" />
+      <option name="deployToSlot" value="false" />
+      <option name="enableApplicationLog" value="false" />
+      <option name="enableDetailedErrorMessage" value="false" />
+      <option name="enableFailedRequestTracing" value="false" />
+      <option name="enableWebServerLogging" value="true" />
+      <option name="jdkVersion">
+        <JavaVersion />
+      </option>
+      <option name="newSlotConfigurationSource" />
+      <option name="newSlotName" />
+      <option name="openBrowserAfterDeployment" value="true" />
+      <option name="packaging" value="jar" />
+      <option name="pricing" value="Free_F1" />
+      <option name="projectBase" value="" />
+      <option name="projectType" value="" />
+      <option name="region" value="westus" />
+      <option name="resourceGroup" value="RMS" />
+      <option name="slotName" />
+      <option name="slotPanelVisible" value="false" />
+      <option name="stack" value="JAVA" />
+      <option name="subscriptionId" value="79f9e758-8321-46b7-afb9-6720fa8fc053" />
+      <option name="targetName" value="blogs-0.0.1-SNAPSHOT.jar" />
+      <option name="targetPath" value="" />
+      <option name="version" value="8-jre8" />
+      <option name="webAppId" value="" />
+      <option name="webAppName" value="rms" />
+      <option name="webContainer" value="" />
+      <option name="webServerLogQuota" value="35" />
+      <option name="webServerRetentionPeriod" value="0" />
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.BlogsApplication" />
       <item itemvalue="Application.Application" />
@@ -155,6 +287,9 @@
       <item itemvalue="Application.SpringEmailDemoApplication" />
       <item itemvalue="Application.Research_Opportunities" />
       <item itemvalue="Application.OpenResearch" />
+      <item itemvalue="Azure Web App.RMS" />
+      <item itemvalue="Azure Web App.rms" />
+      <item itemvalue="Azure Web App.Azure Web App: blogs:blogs" />
     </list>
     <recent_temporary>
       <list>
@@ -207,6 +342,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="435" y="186" key="#Notifications" timestamp="1639212304449">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="435" y="186" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1639212304449" />
     <state x="15" y="11" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1638716251156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -223,46 +362,54 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1638714499793" />
-    <state width="1322" height="383" key="GridCell.Tab.0.bottom" timestamp="1639166819429">
+    <state width="1322" height="229" key="GridCell.Tab.0.bottom" timestamp="1639223576951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="383" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
-    <state width="1322" height="383" key="GridCell.Tab.0.center" timestamp="1639166819429">
+    <state width="1322" height="229" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1639223576951" />
+    <state width="1322" height="229" key="GridCell.Tab.0.center" timestamp="1639223576951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="383" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
-    <state width="1322" height="383" key="GridCell.Tab.0.left" timestamp="1639166819429">
+    <state width="1322" height="229" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1639223576951" />
+    <state width="1322" height="229" key="GridCell.Tab.0.left" timestamp="1639223576951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="383" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
-    <state width="1322" height="383" key="GridCell.Tab.0.right" timestamp="1639166819429">
+    <state width="1322" height="229" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1639223576951" />
+    <state width="1322" height="229" key="GridCell.Tab.0.right" timestamp="1639223576951">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="383" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1639166819429" />
-    <state width="1322" height="426" key="GridCell.Tab.1.bottom" timestamp="1638802141561">
+    <state width="1322" height="229" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1639223576951" />
+    <state width="1322" height="426" key="GridCell.Tab.1.bottom" timestamp="1639210082443">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
-    <state width="1322" height="426" key="GridCell.Tab.1.center" timestamp="1638802141561">
+    <state width="1322" height="426" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1639210082443" />
+    <state width="1322" height="426" key="GridCell.Tab.1.center" timestamp="1639210082443">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
-    <state width="1322" height="426" key="GridCell.Tab.1.left" timestamp="1638802141561">
+    <state width="1322" height="426" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1639210082443" />
+    <state width="1322" height="426" key="GridCell.Tab.1.left" timestamp="1639210082443">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
-    <state width="1322" height="426" key="GridCell.Tab.1.right" timestamp="1638802141561">
+    <state width="1322" height="426" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1639210082443" />
+    <state width="1322" height="426" key="GridCell.Tab.1.right" timestamp="1639210082443">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="426" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1638802141561" />
+    <state width="1322" height="426" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1639210082443" />
     <state x="213" y="17" key="Maven.ArtifactSearchDialog" timestamp="1638717018141">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="213" y="17" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1638717018141" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1636823583976">
+    <state x="184" y="0" key="SettingsEditor" timestamp="1639171021983">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1636823583976" />
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1639171021982" />
+    <state x="355" y="195" key="SignInWindow" timestamp="1639212041140">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="355" y="195" key="SignInWindow/0.0.1366.728@0.0.1366.728" timestamp="1639212041140" />
+    <state x="488" y="217" key="SubscriptionsDialog" timestamp="1639212119432">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="217" key="SubscriptionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1639212119432" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1639166302678">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -285,18 +432,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/ClosedResearch.java</url>
-          <line>133</line>
+          <line>109</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/StudentController.java</url>
-          <line>428</line>
+          <line>407</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/TeacherController.java</url>
-          <line>348</line>
+          <line>305</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/StudentController.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/StudentController.java</url>
+          <line>520</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/Research_Tracker.java</url>
@@ -308,11 +465,35 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/Student.java</url>
-          <line>66</line>
+          <line>67</line>
           <properties class="com.sundas.blogs.Student" method="getClassName">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/ClosedResearch.java</url>
+          <line>81</line>
+          <properties class="com.sundas.blogs.ClosedResearch" method="setConclusion">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/StudentController.java</url>
+          <line>549</line>
+          <properties class="com.sundas.blogs.StudentController" method="Add_Research_Paper_Review">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sundas/blogs/StudentController.java</url>
+          <line>603</line>
+          <properties class="com.sundas.blogs.StudentController" method="Delete_Research_Paper_Review">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

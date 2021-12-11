@@ -19,112 +19,88 @@ public class ClosedResearch {
     String url ="jdbc:mysql://localhost/rms";
     public Connection con =  DriverManager.getConnection(url, "root", "");public Blob Report;
     public String Status;
-
-    public int getResearch_Id() {
-        return Research_Id;
-    }
-
-    public String getRemarks() {
-        return Remarks;
-    }
-
-    public String getDomain() {
-        return Domain;
-    }
-
-    public String getTitle() {
-        return Title;
-    }
-
-    public String getTeacher() {
-        return Teacher;
-    }
-
-    public Date getStarting_Date() {
-        return Starting_Date;
-    }
-
-    public int getTeacher_id() {
-        return Teacher_id;
-    }
-
-    public String getConclusion() {
-        return Conclusion;
-    }
-
-    public String getAbstract() {
-        return Abstract;
-    }
-
-    public String getStatus() {
-        return Status;
-    }
-
-    public Date getEnding_Date() {
-        return Ending_Date;
-    }
-
-    public void setDomain(String domain) {
-        Domain = domain;
-    }
-
-    public void setStarting_Date(Date starting_Date) {
-        Starting_Date = starting_Date;
-    }
-
-    public void setTitle(String title) {
-        Title = title;
-    }
-
-    public void setRemarks(String remarks) {
-        this.Remarks = remarks;
-    }
-
-    public void setResearch_Id(int research_Id) {
-        Research_Id = research_Id;
-    }
-
-    public void setTeacher_id(int teacher_id) {
-        Teacher_id = teacher_id;
-    }
-
-    public void setTeacher(String teacher) {
-        Teacher = teacher;
-    }
-
-    public void setConclusion(String conclusion) {
-        Conclusion = conclusion;
-    }
-
-    public void setStatus(String status) {
-        Status = status;
-    }
-
-    public void setAbstract(String anAbstract) {
-        Abstract = anAbstract;
-    }
-
-    public void setLink(String link) {
-        Link = link;
-    }
-
-    public String getLink() {
-        return Link;
-    }
-
-    public String getStudents() {
-        return Students;
-    }
-
-    public void setEnding_Date(Date ending_Date) {
-        Ending_Date = ending_Date;
-    }
-
     public String Link;
     public String Students = "";
     Statement stmt1, stmt2, stmt3;
     ResultSet rs, rt, ru;
     public String Teacher;
+
+    public int getResearch_Id() {
+        return Research_Id;
+    }
+    public String getRemarks() {
+        return Remarks;
+    }
+    public String getDomain() {
+        return Domain;
+    }
+    public String getTitle() {
+        return Title;
+    }
+    public String getTeacher() {
+        return Teacher;
+    }
+    public Date getStarting_Date() {
+        return Starting_Date;
+    }
+    public int getTeacher_id() {
+        return Teacher_id;
+    }
+    public String getConclusion() {
+        return Conclusion;
+    }
+    public String getAbstract() {
+        return Abstract;
+    }
+    public String getStatus() {
+        return Status;
+    }
+    public Date getEnding_Date() {
+        return Ending_Date;
+    }
+    public void setDomain(String domain) {
+        Domain = domain;
+    }
+    public void setStarting_Date(Date starting_Date) {
+        Starting_Date = starting_Date;
+    }
+    public void setTitle(String title) {
+        Title = title;
+    }
+    public void setRemarks(String remarks) {
+        this.Remarks = remarks;
+    }
+    public void setResearch_Id(int research_Id) {
+        Research_Id = research_Id;
+    }
+    public void setTeacher_id(int teacher_id) {
+        Teacher_id = teacher_id;
+    }
+    public void setTeacher(String teacher) {
+        Teacher = teacher;
+    }
+    public void setConclusion(String conclusion) {
+        Conclusion = conclusion;
+    }
+    public void setStatus(String status) {
+        Status = status;
+    }
+    public void setAbstract(String anAbstract) {
+        Abstract = anAbstract;
+    }
+    public void setLink(String link) {
+        Link = link;
+    }
+    public String getLink() {
+        return Link;
+    }
+    public String getStudents() {
+        return Students;
+    }
+    public void setEnding_Date(Date ending_Date) {
+        Ending_Date = ending_Date;
+    }
+
     private ArrayList < ClosedResearch > Closed = new ArrayList < ClosedResearch > ();
 
     // By SUNDAS NOREEN
@@ -354,6 +330,7 @@ public class ClosedResearch {
         return Closed;
     }
 
+    // By LAIBA AASHIQ
     public ArrayList <ClosedResearch> Teacher_List(int Teacher_Id) throws SQLException {
         this.Teacher_id=Teacher_Id;
         try {
@@ -392,6 +369,7 @@ public class ClosedResearch {
         return Closed;
     }
 
+    // By LAIBA AASHIQ
     public boolean Edit_Research(int Research_Id, String Status, String Link, String Abstract, String Conclusion) throws SQLException {
        boolean flag=false;
         try {

@@ -26,6 +26,7 @@ public class Student
     private String gender;
     String url ="jdbc:mysql://localhost/rms";
     public Connection con =  DriverManager.getConnection(url, "root", "");
+
     public void setNew(String New){this.New=New;}
     public void setGender(String gender){this.gender=gender;}
     public void setName(String Name) {this.Name=Name;}

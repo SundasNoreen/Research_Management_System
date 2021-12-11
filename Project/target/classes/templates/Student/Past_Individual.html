@@ -89,11 +89,9 @@
                                 <p style="font-weight:bold; color:black;">Ending Date:</p>
                                 <p  th:text="${#dates.format(b.Ending_Date, 'dd-MMM-yyyy')}">Title of Research:</p></div>
                             <div class="col-md-4">
-                                <p style="font-weight:bold; color:black;">Success Level:</p>
-                                <p  th:text="${b.Success_Level}">Title of Research:</p></div>
 
                             <p style="font-weight:bold; color:black;">Conducted by:</p>
-                            <p th:text="${b.Teacher}">Title of Research:</p>
+                                <p th:text="${b.Teacher}">Title of Research:</p></div></div>
                             <p style="font-weight:bold; color:black;">Students:</p>
                             <p  th:utext="${#strings.replace(b.Students,'&#10;','&lt;br&gt;')}">Title of Research:</p>
                             <p style=" font-weight:bold; color:black;">View Report:</p>

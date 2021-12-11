@@ -1,4 +1,4 @@
-
+// By SUNDAS NOREEN
 package com.sundas.blogs;
 
 import java.sql.*;
@@ -18,7 +18,6 @@ public class Home
     public void seton(int on){this.on=on;}
     public void setcom(int com){this.com=com;}
 
-    // By SUNDAS NOREEN
     public static int getStudents() throws SQLException
     {
         String url ="jdbc:mysql://localhost/rms";

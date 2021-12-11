@@ -366,6 +366,7 @@ public class Application {
         return App;
     }
 
+    // By SUNDAS NOREEN
     public ArrayList < Application > View_Applications_Particular(int Opportunity_Id) throws SQLException {
         String url ="jdbc:mysql://localhost/rms";
         Connection con =  DriverManager.getConnection(url, "root", "");
@@ -413,6 +414,7 @@ public class Application {
         return App;
     }
 
+    // By LAIBA AASHIQ
     public ArrayList < Application > View_Approved(int Opportunity_Id) throws SQLException {
         String url ="jdbc:mysql://localhost/rms";
         Connection con =  DriverManager.getConnection(url, "root", "");
@@ -462,6 +464,7 @@ public class Application {
         return App;
     }
 
+    // By AQSA AYAZ
     public boolean Approve_Reject(int Application_id,String Status) throws SQLException, ClassNotFoundException {
         String url ="jdbc:mysql://localhost/rms";
         Connection con =  DriverManager.getConnection(url, "root", "");

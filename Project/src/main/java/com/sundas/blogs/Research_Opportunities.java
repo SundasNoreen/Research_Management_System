@@ -14,23 +14,6 @@ public class Research_Opportunities {
     public String No_of_Student;
     public String last;
     public String starting;
-
-    public String getLast() {
-        return last;
-    }
-
-    public String getStarting() {
-        return starting;
-    }
-
-    public void setLast(String last) {
-        this.last = last;
-    }
-
-    public void setStarting(String starting) {
-        this.starting = starting;
-    }
-
     public String Min_Edu;
     public Date Last_date_to_apply;
     public Date Starting_Date;
@@ -42,6 +25,19 @@ public class Research_Opportunities {
     String url ="jdbc:mysql://localhost/rms";
     public Connection con =  DriverManager.getConnection(url, "root", "");public Statement stmt, stmt2, stmt3;
     public static ResultSet rs, ru, rt;
+
+    public String getLast() {
+        return last;
+    }
+    public String getStarting() {
+        return starting;
+    }
+    public void setLast(String last) {
+        this.last = last;
+    }
+    public void setStarting(String starting) {
+        this.starting = starting;
+    }
     public String getTitle() {
         return Title;
     }
@@ -194,6 +190,7 @@ public class Research_Opportunities {
         return Research;
     }
 
+    // By AAIZA NAEEM
     public ArrayList < Research_Opportunities > Teacher_List(int Teacher_Id) throws SQLException {
         try {
             this.Teacher_Id=Teacher_Id;
@@ -367,6 +364,7 @@ public class Research_Opportunities {
         return Research;
     }
 
+    // By AQSA AYAZ
     public boolean Add_Research_Opportunities(String Title, int Teacher_Id,String Domain, String No_of_Student, String Min_Edu, String last, String starting, String About, String Eligibility, String CGPA) throws SQLException, ParseException {
         this.Title = Title;
         this.Teacher_Id = Teacher_Id;
@@ -407,6 +405,7 @@ public class Research_Opportunities {
         return flag;
     }
 
+    // By LAIBA AASHIQ
     public boolean Edit_Research_Opportunities(int Application_Id, int Teacher_Id,String Domain, String No_of_Student, String Min_Edu, String last, String starting, String About, String Eligibility, String CGPA) throws SQLException, ParseException {
         this.Application_Id=Application_Id;
         this.Teacher_Id = Teacher_Id;
@@ -445,6 +444,7 @@ public class Research_Opportunities {
         return flag;
     }
 
+    // By LAIBA AASHIQ
     public boolean Edit_Research_Opportunities(String starting,int Application_Id, int Teacher_Id,String Domain, String No_of_Student, String Min_Edu, String About, String Eligibility, String CGPA) throws SQLException, ParseException {
         this.Application_Id=Application_Id;
         this.Teacher_Id = Teacher_Id;
@@ -480,6 +480,7 @@ public class Research_Opportunities {
         return flag;
     }
 
+    // By LAIBA AASHIQ
     public boolean Edit_Research_Opportunities(int Application_Id, int Teacher_Id,String Domain, String No_of_Student, String Min_Edu, String last, String About, String Eligibility, String CGPA) throws SQLException, ParseException {
         this.Application_Id=Application_Id;
         this.Teacher_Id = Teacher_Id;
@@ -515,6 +516,7 @@ public class Research_Opportunities {
         return flag;
     }
 
+    // By LAIBA AASHIQ
     public boolean Edit_Research_Opportunities(int Application_Id, int Teacher_Id,String Domain, String No_of_Student, String Min_Edu,String About, String Eligibility, String CGPA) throws SQLException, ParseException {
         this.Application_Id=Application_Id;
         this.Teacher_Id = Teacher_Id;

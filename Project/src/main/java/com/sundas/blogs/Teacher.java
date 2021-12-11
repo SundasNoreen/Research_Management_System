@@ -334,6 +334,7 @@ public class Teacher
         return flag;
     }
 
+    // By SUNDAS NOREEN
     public ArrayList<Teacher> GetData(int Teacher_Id) throws SQLException
     {
         this.Teacher_Id=Teacher_Id;
@@ -371,6 +372,7 @@ public class Teacher
         return Teachers;
     }
 
+    // By AAIZA NAEEM
     public boolean Change_Password(int Teacher_Id, String Password, String New) throws SQLException
     {
         this.Teacher_Id=Teacher_Id;

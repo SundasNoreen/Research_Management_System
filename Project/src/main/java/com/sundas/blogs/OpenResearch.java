@@ -13,81 +13,65 @@ public class OpenResearch {
     public Date Starting_Date;
     public String About;
     public String Temp;
-
-    public String getTitle() {
-        return Title;
-    }
-
-    public int getTeacher_id() {
-        return Teacher_id;
-    }
-
-    public String getDomain() {
-        return Domain;
-    }
-
-    public Date getStarting_Date() {
-        return Starting_Date;
-    }
-
-    public int getResearch_Id() {
-        return Research_Id;
-    }
-
-    public String getAbout() {
-        return About;
-    }
-
-    public String getTemp() {
-        return Temp;
-    }
-
-    public String getStudents() {
-        return Students;
-    }
-
-    public String getTeacher() {
-        return Teacher;
-    }
-
-    public void setTeacher_id(int teacher_id) {
-        Teacher_id = teacher_id;
-    }
-
-    public void setResearch_Id(int research_Id) {
-        Research_Id = research_Id;
-    }
-
-    public void setTitle(String title) {
-        Title = title;
-    }
-
-    public void setStarting_Date(Date starting_Date) {
-        Starting_Date = starting_Date;
-    }
-
-    public void setTeacher(String teacher) {
-        Teacher = teacher;
-    }
-
-    public void setDomain(String domain) {
-        Domain = domain;
-    }
-
-    public void setAbout(String about) {
-        About = about;
-    }
-
-    public void setTemp(String temp) {
-        Temp = temp;
-    }
-
     String url = "jdbc:mysql://localhost/rms";
     public Connection con = DriverManager.getConnection(url, "root", "");
     public String Students = "";
     Statement stmt1, stmt2, stmt3, stmt4, stmt5;
     ResultSet rs, rt, ru;
     public String Teacher;
+
+    public String getTitle() {
+        return Title;
+    }
+    public int getTeacher_id() {
+        return Teacher_id;
+    }
+    public String getDomain() {
+        return Domain;
+    }
+    public Date getStarting_Date() {
+        return Starting_Date;
+    }
+    public int getResearch_Id() {
+        return Research_Id;
+    }
+    public String getAbout() {
+        return About;
+    }
+    public String getTemp() {
+        return Temp;
+    }
+    public String getStudents() {
+        return Students;
+    }
+    public String getTeacher() {
+        return Teacher;
+    }
+    public void setTeacher_id(int teacher_id) {
+        Teacher_id = teacher_id;
+    }
+    public void setResearch_Id(int research_Id) {
+        Research_Id = research_Id;
+    }
+    public void setTitle(String title) {
+        Title = title;
+    }
+    public void setStarting_Date(Date starting_Date) {
+        Starting_Date = starting_Date;
+    }
+    public void setTeacher(String teacher) {
+        Teacher = teacher;
+    }
+    public void setDomain(String domain) {
+        Domain = domain;
+    }
+    public void setAbout(String about) {
+        About = about;
+    }
+    public void setTemp(String temp) {
+        Temp = temp;
+    }
+
     private ArrayList<OpenResearch> Open = new ArrayList<OpenResearch>();
 
     OpenResearch() throws SQLException {
@@ -119,6 +103,7 @@ public class OpenResearch {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Open.clear();
+            System.out.println(Reg_No);
             stmt1 = con.createStatement();
             String query = "SELECT * FROM `student_research_open` WHERE  `Student_Id`='" + Reg_No + "'";
             rt = stmt1.executeQuery(query);
@@ -273,6 +258,7 @@ public class OpenResearch {
         return Open;
     }
 
+    // By AAIZA NAEEM
     public ArrayList<OpenResearch> Teacher_List(int Teacher_Id) throws SQLException {
         this.Teacher_id = Teacher_Id;
         try {
@@ -304,6 +290,7 @@ public class OpenResearch {
         return Open;
     }
 
+    // By SUNDAS NOREEN
     public boolean Mark_Closed(int id, String Status, String Ending, String Report, String Abstract, String Conclusion) throws SQLException {
         this.Research_Id = id;
         boolean flag = false;
@@ -321,41 +308,11 @@ public class OpenResearch {
                 System.out.println("Data Fetched");
             }
             java.sql.Date date2 = java.sql.Date.valueOf(Ending);
-            System.out.println(date2);
-            String query = "INSERT INTO `closed_research`(`Status`, `Title`, `Teacher_Id`, `Domain`, `Starting_Date`, `Ending_Date`,`Abstract`, `Conclusion`, `Link`,`Research_Id`) VALUES (?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement st = con.prepareStatement(query);
-            st.setString(1, Status);
-            st.setString(2, Title);
-            st.setInt(3, Teacher_id);
-            st.setString(4, Domain);
-            st.setDate(5, (java.sql.Date) Starting_Date);
-            st.setDate(6, date2);
-            st.setString(7, Abstract);
-            st.setString(8, Conclusion);
-            st.setString(9, Report);
-            st.setInt(10, Research_Id);
-            st.executeUpdate();
-            System.out.println("Inserted");
-            String query1 = "DELETE FROM `open_research` WHERE  `Teacher_Id`='" + Teacher_id + "'";
-            stmt3 = con.createStatement();
-            stmt3.executeUpdate(query1);
-            System.out.println("Data Deleted");
-            stmt4 = con.createStatement();
-            rt = stmt2.executeQuery("SELECT * FROM `student_research_open` WHERE  `Research_Id`='" + Research_Id + "'");
-            while (rt.next()) {
-                String query2 = "INSERT INTO `student_research_closed`(`Student_Id`, `Research_Id`) VALUES (?,?)";
-                PreparedStatement st2 = con.prepareStatement(query2);
-                String name = rt.getString(1);
-                st2.setString(1, name);
-                st2.setInt(2, Research_Id);
-                System.out.println("Data Inserted");
-                st2.executeUpdate();
-                flag = true;
+            MarkClosed MyObj = new MarkClosed();
+            if(MyObj.Mark_Closed(Research_Id,Title,Teacher_id,Domain,Starting_Date,Status,date2,Abstract,Conclusion,Report))
+            {
+                flag=true;
             }
-            String query3 = "DELETE FROM `student_research_open` WHERE  `Research_Id`='" + Research_Id + "'";
-            stmt5 = con.createStatement();
-            stmt5.executeUpdate(query3);
-            System.out.println("Data Deleted");
         } catch (Exception ex) {
             flag = false;
             System.out.println(ex.getMessage());
@@ -365,6 +322,7 @@ public class OpenResearch {
         return flag;
     }
 
+    // By LAIBA AASHIQ
     public boolean Add_Research(String Title,int Teacher_Id,String Domain,String Starting_Date, String About) throws SQLException {
         boolean flag=false;
         try{
@@ -389,6 +347,7 @@ public class OpenResearch {
         return flag;
     }
 
+    // By SUNDAS NOREEN
     public boolean Edit_Research(int Research_Id,String Domain,String Starting_Date, String About) throws SQLException {
         boolean flag=false;
         try{
@@ -411,6 +370,7 @@ public class OpenResearch {
         return flag;
     }
 
+    // By SUNDAS NOREEN
     public boolean Edit_Research(int Research_Id,String Domain, String About) throws SQLException {
         boolean flag=false;
         try{
