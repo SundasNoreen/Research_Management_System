@@ -151,7 +151,7 @@ public class Student
         this.Email=Email;
         this.Password=Password;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
             try
             {
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -186,7 +186,7 @@ public class Student
     {
         this.Reg_No=Reg_No;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         Students.clear();
         try
         {
@@ -226,7 +226,7 @@ public class Student
         this.New=New;
         this.Password=Password;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -264,7 +264,7 @@ public class Student
     {
         Students.clear();
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -303,7 +303,7 @@ public class Student
         this.Reg_No=Reg_No;
         Students.clear();
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -354,7 +354,7 @@ public class Student
             this.CNIC=CNIC;
             boolean flag=false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 String query = "INSERT INTO `students`(`Reg_No`, `Name`, `Degree`, `Class`, `Field`, `FatherName`, `CNIC`, `DOB`, `ContactNumber`, `Email`, `LoginId`, `Password`, `Gender`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -393,7 +393,7 @@ public class Student
         this.Password=Password;
         boolean flag=false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "UPDATE `students` SET `Degree`=?,`Field`=?,`ContactNumber`=?,`Email`=?,`Password`=? WHERE `Reg_No`=?";
@@ -421,7 +421,7 @@ public class Student
         this.Reg_No=Reg_No;
         boolean flag=false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
