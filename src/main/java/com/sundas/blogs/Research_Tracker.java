@@ -108,7 +108,7 @@ public class Research_Tracker
     // By SUNDAS NOREEN
     public ArrayList<Research_Tracker> MyTrack(String Reg_No) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "SELECT * FROM `research_tracker` WHERE `Student_Id`='"+Reg_No+"'";
@@ -145,7 +145,7 @@ public class Research_Tracker
     // By AQSA AYAZ
     public ArrayList<Research_Tracker> All_Track() throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "SELECT * FROM `research_tracker`";
@@ -182,7 +182,7 @@ public class Research_Tracker
     // By SUNDAS NOREEN
     public ArrayList<Research_Tracker> Paper_Review(int Paper_Id) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "SELECT * FROM `research_tracker` WHERE `Paper_Id`='"+Paper_Id+"'";
@@ -220,7 +220,7 @@ public class Research_Tracker
     public boolean UpdatePaper(int Paper_Id,String Author,String Abstract,String Notes,String Conclusion) throws SQLException {
         boolean flag=false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "UPDATE `research_tracker` SET `Author`=?,`Abstract`=?,`Notes`=?,`Conclusion`=? WHERE `Paper_Id`=?";
@@ -257,7 +257,7 @@ public class Research_Tracker
         this.Conclusion=Conclusion;
         this.Publishing=Publishing;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag=false;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
