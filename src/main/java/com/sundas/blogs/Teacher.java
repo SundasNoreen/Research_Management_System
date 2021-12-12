@@ -135,7 +135,7 @@ public class Teacher
     public boolean Login(String Email, String Password) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -171,7 +171,7 @@ public class Teacher
     public ArrayList<Teacher> GetTeachersList() throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         Teachers.clear();
         try
         {
@@ -211,7 +211,7 @@ public class Teacher
     public ArrayList<Teacher> Teacher_Details(int Teacher_Id) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Teacher_Id=Teacher_Id;
         Teachers.clear();
         try
@@ -261,7 +261,7 @@ public class Teacher
         java.sql.Date date1= java.sql.Date.valueOf(D);
         boolean flag=false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "INSERT INTO `teachers`(`Department`, `Name`, `FatherName`, `CNIC`, `DOB`, `Weight_Qual`, `Majors`, `ContactNumber`, `Email`, `LoginId`, `Password`, `Gender`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -293,7 +293,7 @@ public class Teacher
     public boolean Delete_Teacher(int Teacher_Id) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Teacher_Id=Teacher_Id;
         boolean flag=false;
         try
@@ -324,7 +324,7 @@ public class Teacher
         this.Password=Password;
         boolean flag=false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "UPDATE `teachers` SET `Weight_Qual`=?,`Majors`=?,`ContactNumber`=?,`Email`=?,`Password`=? WHERE `Teacher_Id`='"+Teacher_Id+"'";
@@ -349,7 +349,7 @@ public class Teacher
     public ArrayList<Teacher> GetData(int Teacher_Id) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Teacher_Id=Teacher_Id;
         Teachers.clear();
         try
@@ -389,7 +389,7 @@ public class Teacher
     public boolean Change_Password(int Teacher_Id, String Password, String New) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Teacher_Id=Teacher_Id;
         this.New=New;
         this.Password=Password;
