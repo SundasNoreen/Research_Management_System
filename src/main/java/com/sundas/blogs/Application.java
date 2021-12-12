@@ -113,7 +113,7 @@ public class Application {
     // By SUNDAS NOREEN
     public ArrayList < Application > SetData(int Opportunity_Id, String Student_Id) throws SQLException, ClassNotFoundException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         Class.forName("com.mysql.cj.jdbc.Driver");
         stmt = con.createStatement();
         App.clear();
@@ -153,7 +153,7 @@ public class Application {
     // By SUNDAS NOREEN
     public boolean Apply(int Opportunity_Id, String Student_Id, String CGPA, String Degree, String Field, String Reason, String Status, String Semester) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         this.Opportunity_Id = Opportunity_Id;
         this.CGPA = CGPA;
@@ -190,7 +190,7 @@ public class Application {
     // By SUNDAS NOREEN
     public boolean Edit(int Application_Id, String Student_Id, String CGPA, String Degree, String Field, String Reason, String Status, String Semester) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         this.Application_Id = Application_Id;
         this.CGPA = CGPA;
@@ -224,7 +224,7 @@ public class Application {
     // By SUNDAS NOREEN
     public boolean Check(int Opportunity_Id, String Student_Id) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         this.Opportunity_Id = Opportunity_Id;
         this.Student_Id = Student_Id;
@@ -249,7 +249,7 @@ public class Application {
     // By SUNDAS NOREEN
     public boolean CheckStatus(int Application_Id) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         this.Application_Id = Application_Id;
         try {
@@ -273,7 +273,7 @@ public class Application {
     // By SUNDAS NOREEN
     public ArrayList < Application > View_Applications(int id) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -321,7 +321,7 @@ public class Application {
     // By SUNDAS NOREEN
     public ArrayList < Application > View_Applications(String id) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -369,7 +369,7 @@ public class Application {
     // By SUNDAS NOREEN
     public ArrayList < Application > View_Applications_Particular(int Opportunity_Id) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Opportunity_Id=Opportunity_Id;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -417,7 +417,7 @@ public class Application {
     // By LAIBA AASHIQ
     public ArrayList < Application > View_Approved(int Opportunity_Id) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Opportunity_Id=Opportunity_Id;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -467,7 +467,7 @@ public class Application {
     // By AQSA AYAZ
     public boolean Approve_Reject(int Application_id,String Status) throws SQLException, ClassNotFoundException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         this.Status=Status;
         this.Application_Id=Application_id;
