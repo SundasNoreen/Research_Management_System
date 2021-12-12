@@ -14,7 +14,7 @@ public class MarkClosed
     public static boolean Mark_Closed(int Research_Id, String Title, int Teacher_id, String Domain, Date Starting_Date, String Status, java.sql.Date date2, String Abstract, String Conclusion, String Report) throws SQLException {
         boolean flag = false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         if(MarkClosed.Step_One(Research_Id,Title,Teacher_id,Domain,Starting_Date,Status,date2,Abstract,Conclusion,Report))
         {
             if(MarkClosed.Step_Two(Research_Id))
@@ -35,7 +35,7 @@ public class MarkClosed
 
     public static boolean Step_One(int Research_Id, String Title, int Teacher_id, String Domain, Date Starting_Date, String Status, java.sql.Date date2, String Abstract, String Conclusion, String Report) throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -64,7 +64,7 @@ public class MarkClosed
 
     public static boolean Step_Two(int Research_Id)throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -83,7 +83,7 @@ public class MarkClosed
 
     public static boolean Step_Three(int Research_Id)throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -110,7 +110,7 @@ public class MarkClosed
 
     public static boolean Step_Four(int Research_Id)throws SQLException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         boolean flag = false;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
