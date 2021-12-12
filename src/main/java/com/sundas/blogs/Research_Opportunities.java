@@ -23,7 +23,7 @@ public class Research_Opportunities {
     public int count;
     Date now = new Date();
     String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
     public Statement stmt, stmt2, stmt3;
     public static ResultSet rs, ru, rt;
 
