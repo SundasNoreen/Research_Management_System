@@ -18,7 +18,7 @@ public class Admin
     private String CNIC;
     private String New;
     String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
     public void setName(String Name) {this.Name=Name;}
     public void setCNIC(String CNIC) {
         this.CNIC = CNIC;
