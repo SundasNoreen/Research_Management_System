@@ -25,7 +25,7 @@ public class Student
     private String New;
     private String gender;
     String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
 
     public void setNew(String New){this.New=New;}
     public void setGender(String gender){this.gender=gender;}
