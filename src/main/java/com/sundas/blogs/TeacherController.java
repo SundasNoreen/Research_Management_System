@@ -130,7 +130,7 @@ public class TeacherController
             model.addAttribute("Name",(String)session.getAttribute("Teacher_Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
             String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+            Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
             Statement stmt;
             ResultSet rs;
             String FName=null;
@@ -448,7 +448,7 @@ public class TeacherController
             model.addAttribute("Name",(String)session.getAttribute("Teacher_Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
             String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+            Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
             Statement stmt, stmt2, stmt3;
             ResultSet rs, ru, rt;
             String Name=null;
@@ -745,7 +745,7 @@ public class TeacherController
             model.addAttribute("Name",(String)session.getAttribute("Teacher_Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
             String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+            Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
             Statement stmt;
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -883,7 +883,7 @@ public class TeacherController
             boolean f=true;
             try{
                 String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-                Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+                Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
             Class.forName("com.mysql.cj.jdbc.Driver");
             Statement stmt = con.createStatement();
             String query = "SELECT * FROM `student_research_open` WHERE  `Research_Id`= '" + id + "'";
