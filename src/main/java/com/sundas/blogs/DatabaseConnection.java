@@ -11,7 +11,8 @@ public class DatabaseConnection {
         try
         {
             String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");            Class.forName("com.mysql.cj.jdbc.Driver");
+            con =  DriverManager.getConnection(url, "KchBhi@naam", "");            
+            Class.forName("com.mysql.cj.jdbc.Driver");
             return a;
         }
         catch (Exception ex)
