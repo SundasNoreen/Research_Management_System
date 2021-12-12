@@ -102,7 +102,7 @@ public class Admin
     public boolean Login(String Email, String Password) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -138,7 +138,7 @@ public class Admin
     public ArrayList<Admin> GetData(int ID) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         Admin_Id=ID;
         AdminData.clear();
         try
@@ -174,7 +174,7 @@ public class Admin
     public boolean Change_Password(int Admin_Id, String Password, String New) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Admin_Id=Admin_Id;
         this.Password=Password;
         this.New=New;
@@ -215,7 +215,7 @@ public class Admin
     public ArrayList<Admin> GetAdminsList() throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         AdminData.clear();
         try
         {
@@ -248,7 +248,7 @@ public class Admin
     // By HIRA ASLAM
     public boolean Add_Admin_Ind(String Name,String Email,String Address,String CNIC,String Role,String ContactNumber,String LoginId, String Password) throws SQLException, ParseException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Email=Email;
         this.Name=Name;
         this.Address=Address;
@@ -285,7 +285,7 @@ public class Admin
     public boolean Delete_Admin(int Admin_Id) throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Admin_Id=Admin_Id;
         boolean flag=false;
         try
@@ -310,7 +310,7 @@ public class Admin
     // By HIRA ASLAM
     public boolean Update_Admin_Ind(int Admin_Id,String ContactNumber,String Email,String Password,String Role, String Address) throws SQLException, ParseException {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
         this.Admin_Id=Admin_Id;
         this.Role=Role;
         this.Address=Address;
