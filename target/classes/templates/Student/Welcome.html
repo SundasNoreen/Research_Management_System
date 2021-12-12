@@ -1,0 +1,70 @@
+<!-- SUNDAS NOREEN -->
+<!DOCTYPE html>
+<html xmlns:th=“http://www.thymeleaf.org”>
+<style>
+      body
+      {
+      font-family: "Century Gothic";
+      }
+      #fonts {font-size:14px;}
+   </style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Student - RMS</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/University_of_Engineering_and_Technology_Lahore_logo.svg/1200px-University_of_Engineering_and_Technology_Lahore_logo.svg.png"/>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap1.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
+    <script src="/bootstrap/js/bootstrap1.min.js"></script>
+</head>
+<body id="page-top">
+<div id="wrapper">
+    <nav style="background:#130c36" class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                <div class="sidebar-brand-icon rotate-n-15"></div>
+                <div class="sidebar-brand-text mx-3"><span>Student Portal</span></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="navbar-nav text-light" id="accordionSidebar">
+                <li class="nav-item"><a class="nav-link active" th:href="@{/Student_Research_Opportunities}"><span>Research Opportunities</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{Applications_Student_{id}(id = ${ids})}"><span>My Applications</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{/Student_Current_Research_List}"><span>Current Researches</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{/Student_Completed_Research_List}"><span>Past Researches</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{/Research_Paper_Tracker}"><span>Research Paper Tracker</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{/Peer_Directory}"><span>Peer Directory</span></a></li>
+            </ul>
+            <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+        </div>
+    </nav>
+    <div style="background:#f9ffe5;" class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                <div class="container-fluid">
+                    <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" style="color:#130c36;" type="button"><i class="fas fa-bars"></i></button>
+                    <ul  class="navbar-nav flex-nowrap ms-auto">
+                        <div class="d-none d-sm-block topbar-divider"></div>
+                        <li class="nav-item dropdown no-arrow">
+                            <div class="nav-item dropdown no-arrow">
+                                <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small" style="font-size:14px;" th:text="${Name}" >Sundas Noreen</span><img class="border rounded-circle img-profile" th:src="${Picture}"></a>
+                                <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" th:href="@{/Student_Profile}"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><a class="dropdown-item" th:href="@{/Log_Out}"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <a class="border rounded d-inline scroll-to-top" style="color:white; background:#130c36" href="#page-top"><i class="fas fa-angle-up"></i></a>
+</div>
+<script src="/js/chart.min.js"></script>
+<script src="/js/bs-init.js"></script>
+<script src="/js/theme.js"></script>
+<script id="bs-live-reload" data-sseport="52540" data-lastchange="1636802469381" src="/js/livereload.js"></script>
+</body>
+</html>
