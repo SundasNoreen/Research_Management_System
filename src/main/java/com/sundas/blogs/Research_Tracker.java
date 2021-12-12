@@ -21,7 +21,7 @@ public class Research_Tracker
     public Statement stmt,stmt2,stmt3;
     public ResultSet rs,rt,ru;
     String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
     public ArrayList<Research_Tracker> Tracks = new ArrayList<Research_Tracker>();
 
     public String getName() {
