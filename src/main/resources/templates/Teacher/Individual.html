@@ -18,12 +18,8 @@
     <link rel="stylesheet" href="/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="/fonts/fontawesome5-overrides.min.css">
-    <script src="/bootstrap/js/bootstrap1.min.js"></script>
-    <script src="/js/chart.min.js"></script>
-    <script src="/js/bs-init.js"></script>
-    <script src="/js/theme.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
@@ -43,6 +39,8 @@
                 <li class="nav-item"><a class="nav-link active" th:href="@{/Teacher_Completed_Research_List}"><span>Past Researches</span></a></li>
                 <li class="nav-item"><a class="nav-link active" th:href="@{/Department_Research_Record}"><span>Department Record</span></a></li>
                 <li class="nav-item"><a class="nav-link active" th:href="@{/Student_Research_Paper_Reviews}"><span>Student's Research Reviews</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{/Teacher_Profile}"><span>Profile</span></a></li>
+                <li class="nav-item"><a class="nav-link active" th:href="@{/Log_Out}"><span>Logout</span></a></li>
             </ul>
             <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
         </div>
@@ -57,9 +55,6 @@
                         <li class="nav-item dropdown no-arrow">
                             <div class="nav-item dropdown no-arrow">
                                 <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small" style="font-size:14px;" th:text="${Name}" >Sundas Noreen</span><img class="border rounded-circle img-profile" th:src="${Picture}"></a>
-                                <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" th:href="@{/Teacher_Profile}"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><a class="dropdown-item" th:href="@{/Teacher_Log_Out}"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
-                                </a>
-                                </div>
                             </div>
                         </li>
                     </ul>
@@ -99,6 +94,7 @@
     </div>
 </div>
 <a class="border rounded d-inline scroll-to-top" style="color:white; background:#130c36" href="#page-top"><i class="fas fa-angle-up"></i></a>
+<script src="/bootstrap/js/bootstrap1.min.js"></script>
 <script src="/js/chart.min.js"></script>
 <script src="/js/bs-init.js"></script>
 <script src="/js/theme.js"></script>

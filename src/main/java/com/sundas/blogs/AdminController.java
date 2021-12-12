@@ -28,7 +28,7 @@ public class AdminController
     public String Administrator_Login (HttpServletRequest request,Model model)
     {
         HttpSession session = request.getSession();
-        if (session.getAttribute("logged_in")==null)
+        if (session.getAttribute("logged_in_admin")==null)
         {
             Page = "Login/Admin.html";
         }
@@ -49,11 +49,13 @@ public class AdminController
         boolean result = MyObj.Login(ID,Password);
         if (result)
         {
+            int id=MyObj.getAdmin_Id();
             HttpSession session = request.getSession();
             session.setAttribute("Name",MyObj.getName());
             session.setAttribute("Role",MyObj.getRole());
-            session.setAttribute("logged_in","true");
-            session.setAttribute("Admin_ID",MyObj.getAdmin_Id());
+            session.setAttribute("logged_in_admin","true");
+            session.setAttribute("Admin_Id",id);
+            System.out.println(session.getAttribute("Admin_Id"));
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
             return Data.Connection("Admin/Welcome.html",Page);
@@ -67,11 +69,18 @@ public class AdminController
     }
 
     @RequestMapping("/Admin_Log_Out")
-    public String LogOut(HttpServletRequest request)
-    {
+    public String LogOut(HttpServletRequest request,Model model) throws SQLException {
 
         HttpSession session = request.getSession();
         session.invalidate();
+        int s=Home.getStudents();
+        int t=Home.getTeachers();
+        int o=Home.getOn();
+        int c=Home.getCom();
+        model.addAttribute("s",s);
+        model.addAttribute("t",t);
+        model.addAttribute("o",o);
+        model.addAttribute("c",c);
         Page = "Home/Home.html";
         return Data.Connection(Page,Error_Page);
 
@@ -80,7 +89,7 @@ public class AdminController
     @RequestMapping("/Administrator_Current_Research_List")
     public String Admin_Current_Research_List(HttpServletRequest request,Model model, OpenResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture", "/img/Student_Male.png");
@@ -101,7 +110,7 @@ public class AdminController
     @RequestMapping("/Admin_Current_Research_Individual_{id}")
     public String Student_Current_Research_Individual(HttpServletRequest request,Model model,@PathVariable("id") int id, OpenResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -121,7 +130,7 @@ public class AdminController
     @RequestMapping("/Admin_Past_Research_List")
     public String Admin_Past_Research_List(HttpServletRequest request,Model model, ClosedResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -141,7 +150,7 @@ public class AdminController
     @RequestMapping("/Admin_Past_Research_Individual_{id}")
     public String Admin_Past_Research_Individual(HttpServletRequest request,Model model,@PathVariable("id") int id, ClosedResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -161,7 +170,7 @@ public class AdminController
     @RequestMapping("/Admin_Research_Opportunities")
     public String Student_Research_Opportunities(HttpServletRequest request,Model model, Research_Opportunities MyObj, Domains dom) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -184,7 +193,7 @@ public class AdminController
     @RequestMapping("/Admin_Research_Opportunity_Individual_{id}")
     public String Research_Opportunity_Individual(HttpServletRequest request,Model model,@PathVariable("id") int id, Research_Opportunities MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -204,11 +213,12 @@ public class AdminController
     @RequestMapping("/Admin_Profile")
     public String Admin_Profile(HttpServletRequest request,Model model,Admin MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
             ArrayList<Admin> fields;
+            System.out.println(session.getAttribute("Admin_Id"));
             fields=MyObj.GetData((Integer) session.getAttribute("Admin_Id"));
             model.addAttribute("b",fields);
             Page="Admin/Profile.html";}
@@ -224,7 +234,7 @@ public class AdminController
     @GetMapping("/Admin_Change_Password_{id}")
     public String Admin_Change_Password(HttpServletRequest request,Model model,@PathVariable("id") String id) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -241,7 +251,7 @@ public class AdminController
     @PostMapping("/Admin_Change_Password_{id}")
     public String Admin_Change_Password_Here(HttpServletRequest request,Model model,@PathVariable("id") int id, Admin MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -270,7 +280,7 @@ public class AdminController
     @RequestMapping("/Admin_View_Admins_List")
     public String Admin_View_Admins_List(HttpServletRequest request,Model model, Admin MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture", "/img/Student_Male.png");
@@ -298,7 +308,7 @@ public class AdminController
     @RequestMapping("/Admin_View_Students_List")
     public String Admin_View_Students_List(HttpServletRequest request,Model model, Student MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -318,7 +328,7 @@ public class AdminController
     @RequestMapping("/Student_Details_{id}")
     public String Student_Details_Individual(HttpServletRequest request,Model model,@PathVariable("id") String id, Student MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -338,7 +348,7 @@ public class AdminController
     @RequestMapping("/Admin_View_Teachers_List")
     public String Admin_View_Teachers_List(HttpServletRequest request,Model model, Teacher MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -358,7 +368,7 @@ public class AdminController
     @RequestMapping("/Teacher_Details_{id}")
     public String Teacher_Details_Individual(HttpServletRequest request,Model model,@PathVariable("id") int id, Teacher MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -378,7 +388,7 @@ public class AdminController
     @GetMapping("/Add_Student_Ind")
     public String Add_Students_Here(HttpServletRequest request,Model model) throws ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture", "/img/Student_Male.png");
@@ -396,7 +406,7 @@ public class AdminController
     @PostMapping("/Add_Student_Ind")
     public String Add(HttpServletRequest request,Model model, Student MyObj) throws SQLException, ClassNotFoundException, ParseException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Message","");
@@ -435,7 +445,7 @@ public class AdminController
     @GetMapping("/Add_Teacher_Ind")
     public String Add_Teacher(HttpServletRequest request,Model model,Domains dom) throws ClassNotFoundException, SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture", "/img/Student_Male.png");
@@ -456,7 +466,7 @@ public class AdminController
     @PostMapping("/Add_Teacher_Ind")
     public String AddTeacher(HttpServletRequest request,Model model, Teacher MyObj, Domains dom) throws SQLException, ClassNotFoundException, ParseException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Message","");
@@ -497,7 +507,7 @@ public class AdminController
     @RequestMapping("/Delete_Teacher_{id}")
     public String Delete_Teacher(HttpServletRequest request,Model model,@PathVariable("id") int id, Teacher MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -515,7 +525,7 @@ public class AdminController
     @RequestMapping("/Delete_Student_{id}")
     public String Delete_Student(HttpServletRequest request,Model model,@PathVariable("id") String id, Student MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -533,7 +543,7 @@ public class AdminController
     @GetMapping("/Edit_Student_{id}")
     public String Edit_Student(HttpServletRequest request,Model model,@PathVariable("id") String id, Student MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -552,7 +562,7 @@ public class AdminController
     @PostMapping("/Edit_Student_{id}")
     public String Edit_Student_Details(HttpServletRequest request,Model model,@PathVariable("id") String id, Student MyObj) throws SQLException, ParseException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -583,7 +593,7 @@ public class AdminController
     @GetMapping("/Edit_Teacher_{id}")
     public String Edit_Teacher(HttpServletRequest request,Model model,@PathVariable("id") int id, Teacher MyObj, Domains dom) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -604,7 +614,7 @@ public class AdminController
     @PostMapping("/Edit_Teacher_{id}")
     public String Edit_Teacher_Details(HttpServletRequest request,Model model,@PathVariable("id") int id, Teacher MyObj,Domains dom) throws SQLException, ParseException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -637,7 +647,7 @@ public class AdminController
     @GetMapping("/Add_Admin_Ind")
     public String Add_Admin(HttpServletRequest request,Model model) throws ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture", "/img/Student_Male.png");
@@ -660,7 +670,7 @@ public class AdminController
     @PostMapping("/Add_Admin_Ind")
     public String AddAdmin(HttpServletRequest request,Model model, Admin MyObj) throws SQLException, ClassNotFoundException, ParseException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Message","");
@@ -694,7 +704,7 @@ public class AdminController
     @RequestMapping("/Delete_Admin_{id}")
     public String Delete_Admin(HttpServletRequest request,Model model,@PathVariable("id") int id, Admin MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -713,7 +723,7 @@ public class AdminController
     @GetMapping("/Edit_Admin_{id}")
     public String Edit_Admin(HttpServletRequest request,Model model,@PathVariable("id") int id, Admin MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -732,7 +742,7 @@ public class AdminController
     @PostMapping("/Edit_Admin_{id}")
     public String Edit_Admin_Details(HttpServletRequest request,Model model,@PathVariable("id") int id, Admin MyObj) throws SQLException, ParseException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -764,7 +774,7 @@ public class AdminController
     @GetMapping("/Add_Students_csv")
     public String AddCSVs(HttpServletRequest request,Model model) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");
@@ -782,7 +792,7 @@ public class AdminController
     public String ADDSTUDENTSCSV(@RequestParam("file") MultipartFile file,HttpServletRequest request, Model model, RedirectAttributes redirectAttributes) throws SQLException, ParseException, IOException {
         String UPLOADED_FOLDER = "src//main//files//";
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_admin")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Name"));
             model.addAttribute("Picture","/img/Student_Male.png");

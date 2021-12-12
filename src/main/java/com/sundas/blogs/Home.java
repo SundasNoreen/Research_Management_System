@@ -21,7 +21,7 @@ public class Home
     public static int getStudents() throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -47,7 +47,7 @@ public class Home
     public static int getTeachers() throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -73,7 +73,7 @@ public class Home
     public static int getOn() throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -99,7 +99,7 @@ public class Home
     public static int getCom() throws SQLException
     {
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");

@@ -24,8 +24,6 @@ public class Students_List {
         Name = name;
     }
 
-    String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
 
     Students_List() throws SQLException {}
     Students_List(String Name,String Reg) throws SQLException {
@@ -37,6 +35,8 @@ public class Students_List {
     ArrayList<Students_List> lis = new ArrayList<Students_List>();
 
     public ArrayList<Students_List> GetData() throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             lis.clear();

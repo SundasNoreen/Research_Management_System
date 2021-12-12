@@ -16,8 +16,6 @@ public class ClosedResearch {
     public Date Ending_Date;
     public String Abstract;
     public String Conclusion;
-    String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
     public Blob Report;
     public String Status;
     public String Link;
@@ -143,6 +141,8 @@ public class ClosedResearch {
 
     // By SUNDAS NOREEN
     public ArrayList < ClosedResearch > Student_List(String Reg_No) throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt1 = con.createStatement();
@@ -186,6 +186,8 @@ public class ClosedResearch {
     // By SUNDAS NOREEN
     public ArrayList < ClosedResearch > Student_Individual(int Research_Id, String Reg_Number) throws SQLException {
         this.Research_Id = Research_Id;
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt1 = con.createStatement();
@@ -242,6 +244,8 @@ public class ClosedResearch {
 
     // By HIRA ASLAM
     public ArrayList <ClosedResearch> Admin_List() throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt1 = con.createStatement();
@@ -280,6 +284,8 @@ public class ClosedResearch {
 
     // By HIRA ASLAM
     public ArrayList < ClosedResearch > Admin_Individual(int Research_Id) throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         this.Research_Id = Research_Id;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -333,6 +339,8 @@ public class ClosedResearch {
 
     // By LAIBA AASHIQ
     public ArrayList <ClosedResearch> Teacher_List(int Teacher_Id) throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         this.Teacher_id=Teacher_Id;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -373,6 +381,8 @@ public class ClosedResearch {
     // By LAIBA AASHIQ
     public boolean Edit_Research(int Research_Id, String Status, String Link, String Abstract, String Conclusion) throws SQLException {
        boolean flag=false;
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query="UPDATE `closed_research` SET `Status`=?,`Abstract`=?,`Conclusion`=?,`Link`=? WHERE  `Research_Id`='"+Research_Id+"'";

@@ -22,8 +22,6 @@ public class Research_Opportunities {
     public String CGPA;
     public int count;
     Date now = new Date();
-    String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
     public Statement stmt, stmt2, stmt3;
     public static ResultSet rs, ru, rt;
 
@@ -152,6 +150,8 @@ public class Research_Opportunities {
 
     // By SUNDAS NOREEN
     public ArrayList < Research_Opportunities > Student_List() throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -193,6 +193,8 @@ public class Research_Opportunities {
 
     // By AAIZA NAEEM
     public ArrayList < Research_Opportunities > Teacher_List(int Teacher_Id) throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             this.Teacher_Id=Teacher_Id;
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -238,6 +240,8 @@ public class Research_Opportunities {
 
     // By SUNDAS NOREEN
     public ArrayList < Research_Opportunities > Student_Individual(int application_Id) throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -275,6 +279,8 @@ public class Research_Opportunities {
 
     // By AYESHA NADEEM
     public ArrayList < Research_Opportunities > Admin_List() throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -323,6 +329,8 @@ public class Research_Opportunities {
 
     // By AYESHA NADEEM
     public ArrayList < Research_Opportunities > Admin_Individual(int application_Id) throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
@@ -377,6 +385,8 @@ public class Research_Opportunities {
         this.About = About;
         this.last=last;
         this.starting=starting;
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         java.sql.Date date1= java.sql.Date.valueOf(last);
         java.sql.Date date2= java.sql.Date.valueOf(starting);
         boolean flag=false;
@@ -418,6 +428,8 @@ public class Research_Opportunities {
         this.About = About;
         this.last=last;
         this.starting=starting;
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         boolean flag=false;
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -457,6 +469,8 @@ public class Research_Opportunities {
         this.About = About;
         this.starting=starting;
         boolean flag=false;
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             java.sql.Date date2= java.sql.Date.valueOf(starting);
@@ -492,6 +506,8 @@ public class Research_Opportunities {
         this.CGPA = CGPA;
         this.About = About;
         this.last=last;
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         boolean flag=false;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -528,6 +544,8 @@ public class Research_Opportunities {
         this.CGPA = CGPA;
         this.About = About;
         boolean flag=false;
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String query = "UPDATE `research_opportunities` SET `Domain`=?,`Eligibility`=?,`About`=?,`No of Student`=?,`Min_Edu`=?,`CGPA`=? WHERE `Application_id`=?";

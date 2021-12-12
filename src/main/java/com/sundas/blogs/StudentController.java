@@ -22,7 +22,7 @@ public class StudentController
     public String Students_Login (HttpServletRequest request, Model model)
     {
         HttpSession session = request.getSession();
-        if (session.getAttribute("logged_in")==null)
+        if (session.getAttribute("logged_in_student")==null)
         {
             Page = "Login/Student.html";
         }
@@ -50,7 +50,7 @@ public class StudentController
             HttpSession session = request.getSession();
             session.setAttribute("Student_Reg_No",a);
             session.setAttribute("Student_Name",b);
-            session.setAttribute("logged_in",c);
+            session.setAttribute("logged_in_student",c);
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
             return Data.Connection("Student/Welcome.html",Page);
@@ -66,7 +66,7 @@ public class StudentController
     @RequestMapping("/Student_Current_Research_List")
     public String Student_Current_Research_List(HttpServletRequest request, Model model, OpenResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -88,7 +88,7 @@ public class StudentController
     @RequestMapping("/Student_Current_Research_Individual_{id}")
     public String Student_Current_Research_Individual(HttpServletRequest request, Model model, @PathVariable("id") int id, OpenResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -108,7 +108,7 @@ public class StudentController
     @RequestMapping("/Student_Completed_Research_List")
     public String Student_Completed_Research_List(HttpServletRequest request,Model model, ClosedResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -128,7 +128,7 @@ public class StudentController
     @RequestMapping("/Student_Completed_Research_Individual_{id}")
     public String Student_Completed_Research_Individual(HttpServletRequest request,Model model,@PathVariable("id") int id, ClosedResearch MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -148,7 +148,7 @@ public class StudentController
     @RequestMapping("/Student_Research_Opportunities")
     public String Student_Research_Opportunities(HttpServletRequest request,Model model, Research_Opportunities MyObj, Domains dom) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -171,7 +171,7 @@ public class StudentController
     @RequestMapping("/Research_Opportunity_Individual_{id}")
     public String Research_Opportunity_Individual(HttpServletRequest request,Model model,@PathVariable("id") int id, Research_Opportunities MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -191,7 +191,7 @@ public class StudentController
     @GetMapping("/Research_Opportunity_Apply_{id}")
     public String Research_Opportunity_Apply(HttpServletRequest request,Model model,@PathVariable("id") int id,Domains dom, Application MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -223,7 +223,7 @@ public class StudentController
     @PostMapping("/Research_Opportunity_Apply_{id}")
     public String Research_Opportunity_Apply_Here(HttpServletRequest request, Model model,@PathVariable("id") int id, Application MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -258,7 +258,7 @@ public class StudentController
     @RequestMapping("/Applications_Student_{id}")
     public String Student_Research_Opportunities(HttpServletRequest request,Model model,@PathVariable("id") String id, Application MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -281,7 +281,7 @@ public class StudentController
     @RequestMapping("/Applications_Student_Full_{id}")
     public String Applications_Student_Full(HttpServletRequest request,Model model,@PathVariable("id") int id, Application MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -302,7 +302,7 @@ public class StudentController
     @GetMapping("/Research_Opportunity_Application_Edit_{id}")
     public String Research_Opportunity_Edit(HttpServletRequest request,Model model,@PathVariable("id") int id,Domains dom, Application MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -334,7 +334,7 @@ public class StudentController
     @PostMapping("/Research_Opportunity_Application_Edit_{id}")
     public String Research_Opportunity_Edit_Here(HttpServletRequest request,Model model,@PathVariable("id") int id, Application MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -369,7 +369,7 @@ public class StudentController
     @RequestMapping("/Student_Profile")
     public String Student_Profile(HttpServletRequest request,Model model,Student MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -389,7 +389,7 @@ public class StudentController
     @GetMapping("/Change_Password_{id}")
     public String Change_Password(HttpServletRequest request,Model model,@PathVariable("id") String id) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -406,7 +406,7 @@ public class StudentController
     @PostMapping("/Change_Password_{id}")
     public String Change_Password_Here(HttpServletRequest request,Model model,@PathVariable("id") String id, Student MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -435,7 +435,7 @@ public class StudentController
     @RequestMapping("/Research_Paper_Tracker")
     public String Research_Paper_Tracker(HttpServletRequest request,Model model,Research_Tracker MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -455,7 +455,7 @@ public class StudentController
     @RequestMapping("/Peer_Directory")
     public String Peer_Directory(HttpServletRequest request,Model model,Research_Tracker MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -475,7 +475,7 @@ public class StudentController
     @RequestMapping("/Research_Paper_Review_{id}")
     public String Research_Paper_Review(HttpServletRequest request,Model model,@PathVariable("id") int id, Research_Tracker MyObj) throws SQLException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -496,7 +496,7 @@ public class StudentController
     @GetMapping("/Edit_Research_Paper_Review_{id}")
     public String Edit_Research_Paper_Review(HttpServletRequest request,Model model,@PathVariable("id") int id,Domains dom, Research_Tracker MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -519,7 +519,7 @@ public class StudentController
     @PostMapping("/Edit_Research_Paper_Review_{id}")
     public String Edit_Research_Paper_Review_Here(HttpServletRequest request,Model model,@PathVariable("id") int id, Research_Tracker MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -549,7 +549,7 @@ public class StudentController
     @GetMapping("/Add_Research_Paper_Review")
     public String Add_Research_Paper_Review(HttpServletRequest request,Model model,Domains dom, Research_Tracker MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -569,7 +569,7 @@ public class StudentController
     @PostMapping("/Add_Research_Paper_Review")
     public String Add_Research_Paper_Review_Here(HttpServletRequest request,Model model,Research_Tracker MyObj) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -603,7 +603,7 @@ public class StudentController
     @RequestMapping("/Delete_Research_Paper_Review_{id}")
     public String Delete_Research_Paper_Review(HttpServletRequest request,Model model, @PathVariable("id") int id) throws SQLException, ClassNotFoundException {
         HttpSession session=request.getSession();
-        if (session.getAttribute("logged_in")!=null)
+        if (session.getAttribute("logged_in_student")!=null)
         {
             model.addAttribute("Name",(String)session.getAttribute("Student_Name"));
             model.addAttribute("Picture","/img/Student_Female.png");
@@ -637,10 +637,17 @@ public class StudentController
     }
 
     @RequestMapping("/Log_Out")
-    public String LogOut(HttpServletRequest request)
-    {
+    public String LogOut(HttpServletRequest request,Model model) throws SQLException {
         HttpSession session=request.getSession();
         session.invalidate();
+        int s=Home.getStudents();
+        int t=Home.getTeachers();
+        int o=Home.getOn();
+        int c=Home.getCom();
+        model.addAttribute("s",s);
+        model.addAttribute("t",t);
+        model.addAttribute("o",o);
+        model.addAttribute("c",c);
         Page = "Home/Home.html";
         return Data.Connection(Page,Error_Page);
 }

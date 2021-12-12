@@ -8,8 +8,6 @@ public class Domains {
     public String Name;
     public String About;
     public int No;
-    String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
     Statement stmt;
     ResultSet rs;
 
@@ -24,6 +22,8 @@ public class Domains {
 
     // By SUNDAS NOREEN
     public ArrayList < Domains > Domains_List() throws SQLException {
+        String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             stmt = con.createStatement();
