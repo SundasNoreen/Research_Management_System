@@ -12,7 +12,7 @@ public class Add_Via_CSV
         boolean flag=false;
         String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String username = "KchBhi@naam";
-        String password = "Daal1234";
+        String password = "";
         int count = 0;
         int rv=0;
         String filePath=path;
