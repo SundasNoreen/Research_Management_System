@@ -14,7 +14,7 @@ public class OpenResearch {
     public String About;
     public String Temp;
     String url = "jdbc:mysql://naam.mysql.database.azure.com:3306/rms?useSSL=true&requireSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "Daal1234");
+    public Connection con =  DriverManager.getConnection(url, "KchBhi@naam", "");
     public String Students = "";
     Statement stmt1, stmt2, stmt3, stmt4, stmt5;
     ResultSet rs, rt, ru;
